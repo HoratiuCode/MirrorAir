@@ -1,27 +1,46 @@
 # MirrorAir
 
-MirrorAir is an Android receiver project intended to let a Mac discover an Android tablet or phone as an AirPlay-style mirroring target.
+![MirrorAir Apple](./red-apple_1f34e.png)
+
+MirrorAir is an experimental Android receiver project intended to let a Mac discover an Android tablet or phone as an AirPlay-style mirroring target.
 
 ## What exists now
 
-- Minimal Android UI with a fullscreen render surface, centered receiver name, connection status, and `Start Receiver` / `Stop Receiver`.
+- Minimal Android UI with a fullscreen render surface, receiver name, code, status text, and `Start Receiver` / `Stop Receiver`.
 - Foreground `ReceiverService` with multicast lock and DNS-SD advertisement for `_airplay._tcp` and `_raop._tcp`.
+- Bundled `RPiPlay`, `libplist`, Android OpenSSL, and a first-pass Android `MediaCodec` video path.
 - Config-driven receiver name from `app/src/main/assets/receiver.properties`.
-- Vendored upstream `RPiPlay` code in `vendor/RPiPlay`.
-- Bundled self-contained `RPiPlay` snapshot in `third_party/rpiplay`.
 - Static download website at the repo root for Vercel, plus `docs/` for GitHub Pages.
 
-## What is still missing
+## Why the app may stop or fail to start
 
-Mac mirroring is **not fully working yet**.
+If the APK opens and immediately closes, the most likely causes are:
 
-The hard part is the native Android port:
+- the native receiver library fails to load on the device ABI
+- Android `MediaCodec` rejects the incoming H.264 setup for that device
+- the foreground service is restricted or denied on that Android version
+- Wi-Fi or notification permissions were not granted
+- the AirPlay session starts but the Android renderer path still has a runtime bug
 
-- `RPiPlay` currently targets Raspberry Pi and desktop Linux.
-- Its renderers rely on Linux and Raspberry Pi stacks, not Android `MediaCodec`, `AudioTrack`, or `Surface`.
-- The JNI bridge in `app/src/main/cpp/openairplay_bridge.cpp` is still a placeholder shell around the Android surface lifecycle.
+The app now guards native loading more carefully, but real device validation is still required.
 
-So the repo is now structured for the real port, but it still needs native protocol, decode, and render adaptation before a Mac can actually mirror its screen onto Android.
+## Current technical status
+
+Mac mirroring is still **experimental**.
+
+What is integrated:
+
+- AirPlay-style service discovery
+- bundled `RPiPlay` receiver core
+- bundled `libplist`
+- Android OpenSSL through Gradle prefab
+- Android `SurfaceView` + `MediaCodec` receiver path
+
+What is still not proven:
+
+- reliable end-to-end Mac to Android mirroring on real hardware
+- device-independent H.264 compatibility across Android vendors
+- stable rendering on every Android version and chipset
 
 ## Website
 
@@ -37,11 +56,11 @@ The static website is available in two places:
 
 Vercel should use the repo root directly. GitHub Pages can still use `docs/`.
 
-This can be published with GitHub Pages and used as the download page for the APK once you build one and place it in `docs/downloads/`.
+This can be published with GitHub Pages and used as the download page for the APK once you place `MirrorAir.apk` in `downloads/` or `docs/downloads/`.
 
 ## Download assets
 
-Use `scripts/prepare-downloads.sh` after generating an APK in Android Studio. It copies the APK into both `downloads/` and `docs/downloads/`.
+Use `scripts/prepare-downloads.sh` after generating an APK. It copies the APK into both `downloads/` and `docs/downloads/`.
 
 ## Android To Mac
 
@@ -61,6 +80,7 @@ This launches `scrcpy` on macOS to mirror an Android device to your Mac. It requ
 The project no longer needs the external folder in `Downloads` for the AirPlay engine source snapshot.
 
 - active bundled copy: `third_party/rpiplay`
+- active bundled plist dependency: `third_party/libplist`
 - older cloned vendor copy: `vendor/RPiPlay`
 
 Use `third_party/rpiplay` as the self-contained project source base going forward.

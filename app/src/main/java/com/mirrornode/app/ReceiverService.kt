@@ -27,9 +27,9 @@ class ReceiverService : Service() {
         currentConfig = ReceiverConfig.load(this)
         createNotificationChannel()
         updateState(
-            status = "Receiver idle",
+            status = "Receiver shell ready",
             running = false,
-            detail = "Press Start Receiver to advertise ${currentConfig.receiverName} on Wi-Fi.",
+            detail = "Press Start Receiver to initialize the native receiver stack on this device.",
         )
     }
 
@@ -50,6 +50,18 @@ class ReceiverService : Service() {
 
     private fun startReceiver() {
         currentConfig = ReceiverConfig.load(this)
+
+        if (!ReceiverNativeBridge.isAvailable()) {
+            updateState(
+                status = "Receiver unavailable",
+                running = false,
+                detail = ReceiverNativeBridge.lastErrorOrNull()
+                    ?: "The native receiver library failed to load on this device.",
+            )
+            stopSelf()
+            return
+        }
+
         val foregroundStarted = runCatching {
             startForeground(NOTIFICATION_ID, notification(currentConfig, "Starting receiver..."))
         }.isSuccess
@@ -214,9 +226,9 @@ class ReceiverService : Service() {
             ReceiverState(
                 receiverName = "MirrorAir",
                 receiverCode = "0000",
-                statusText = "Receiver idle",
+                statusText = "Receiver shell ready",
                 running = false,
-                detailText = "Press Start Receiver to advertise MirrorAir on Wi-Fi.",
+                detailText = "Press Start Receiver to initialize the native receiver stack on this device.",
             ),
         )
 

@@ -1,7 +1,7 @@
 {
-  "name": "MirrorNode",
-  "short_name": "MirrorNode",
-  "description": "Download the current Android APK build of the MirrorNode receiver app shell.",
+  "name": "MirrorAir",
+  "short_name": "MirrorAir",
+  "description": "Download the current experimental Android APK build of the MirrorAir receiver app.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

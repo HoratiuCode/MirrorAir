@@ -1,3 +1,2 @@
 ninja: Entering directory `/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/armeabi-v7a'
-[1/2] Building CXX object CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o
-[2/2] Linking CXX shared library "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/45w5wq32/obj/armeabi-v7a/libmirrornode_receiver.so"
+ninja: no work to do.

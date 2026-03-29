@@ -6,7 +6,7 @@
     <title>MirrorAir</title>
     <meta
       name="description"
-      content="MirrorAir is a Mac to Android receiver app shell for screen mirroring experiments."
+      content="MirrorAir packages the current experimental Mac to Android receiver build and direct APK download."
     />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -23,23 +23,23 @@
         <p class="eyebrow">MirrorAir</p>
         <h1>Mac to Android.</h1>
         <p class="lede">
-          Download the current Android APK build and use your Android device as the screen target for your Mac.
+          Download the current experimental Android build, install it on your device, and test the native Mac to Android receiver path.
         </p>
         <div class="actions">
           <a class="button primary" id="downloadButton" href="/downloads/MirrorAir.apk">Download APK</a>
           <a class="button secondary" href="https://github.com/HoratiuCode/MirrorAir/archive/refs/heads/main.zip">Download Source</a>
         </div>
-        <p class="note" id="apk-status">APK status: packaged and ready in <code>downloads/</code>.</p>
+        <p class="note" id="apk-status">APK status: checking packaged build in <code>downloads/</code>.</p>
       </section>
 
       <section class="grid">
         <article class="card">
           <h3>Android App</h3>
-          <p>The APK launches the fullscreen receiver shell with the local receiver service and the Android display surface.</p>
+          <p>The APK launches the receiver shell, foreground service, and Android video surface used by the native stack.</p>
         </article>
         <article class="card">
           <h3>Current State</h3>
-          <p>This build is the Mac to Android app shell and service layer. The full AirPlay-compatible mirroring engine is still in progress.</p>
+          <p>This build is experimental. Discovery, native startup, and Android video decode are wired in, but device compatibility still varies.</p>
         </article>
         <article class="card">
           <h3>Direct Download</h3>
@@ -50,7 +50,10 @@
       <section class="panel">
         <h2>Install</h2>
         <p>
-          Download the APK, allow app installs from your browser if Android asks, then open the app on the Android device you want to use as the Mac display target.
+          Download the APK, allow app installs from your browser if Android asks, then open MirrorAir on the Android device you want to use as the Mac display target.
+        </p>
+        <p>
+          If the app closes on launch, the current build is hitting a native startup issue on that device. Reinstall the latest APK before testing again.
         </p>
       </section>
     </main>
