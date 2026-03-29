@@ -1,16 +1,2 @@
 ninja: Entering directory `/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/1u261v93/arm64-v8a'
-[1/2] Building CXX object CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o
-[2/2] Linking CXX shared library "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/arm64-v8a/libmirrornode_receiver.so"
-FAILED: /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/arm64-v8a/libmirrornode_receiver.so 
-: && /opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android30 --sysroot=/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++20 -fno-limit-debug-info  -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libmirrornode_receiver.so -o "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/arm64-v8a/libmirrornode_receiver.so" CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o  /opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/30/liblog.so  -latomic -lm && :
-ld.lld: error: undefined symbol: ANativeWindow_release
->>> referenced by openairplay_bridge.cpp:78 (/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/openairplay_bridge.cpp:78)
->>>               CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o:(Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface)
->>> referenced by openairplay_bridge.cpp:101 (/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/openairplay_bridge.cpp:101)
->>>               CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o:(Java_com_mirrornode_app_ReceiverNativeBridge_stopReceiver)
-
-ld.lld: error: undefined symbol: ANativeWindow_fromSurface
->>> referenced by openairplay_bridge.cpp:83 (/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/openairplay_bridge.cpp:83)
->>>               CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o:(Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface)
-clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-ninja: build stopped: subcommand failed.
+[1/1] Linking CXX shared library "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/arm64-v8a/libmirrornode_receiver.so"
