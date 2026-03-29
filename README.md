@@ -8,6 +8,7 @@ MirrorAir is an Android receiver project intended to let a Mac discover an Andro
 - Foreground `ReceiverService` with multicast lock and DNS-SD advertisement for `_airplay._tcp` and `_raop._tcp`.
 - Config-driven receiver name from `app/src/main/assets/receiver.properties`.
 - Vendored upstream `RPiPlay` code in `vendor/RPiPlay`.
+- Bundled self-contained `RPiPlay` snapshot in `third_party/rpiplay`.
 - Static download website at the repo root for Vercel, plus `docs/` for GitHub Pages.
 
 ## What is still missing
@@ -54,3 +55,12 @@ This launches `scrcpy` on macOS to mirror an Android device to your Mac. It requ
 - `scrcpy`
 - `adb`
 - USB debugging enabled on the Android device
+
+## Source Layout
+
+The project no longer needs the external folder in `Downloads` for the AirPlay engine source snapshot.
+
+- active bundled copy: `third_party/rpiplay`
+- older cloned vendor copy: `vendor/RPiPlay`
+
+Use `third_party/rpiplay` as the self-contained project source base going forward.
