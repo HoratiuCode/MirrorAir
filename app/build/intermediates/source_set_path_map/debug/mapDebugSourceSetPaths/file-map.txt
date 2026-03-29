@@ -1,0 +1,43 @@
+com.mirrornode.app-appcompat-1.7.1-0 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/0571b20ee509b65043619619fdb41c8d/transformed/appcompat-1.7.1/res
+com.mirrornode.app-savedstate-ktx-1.4.0-1 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/05c2d37f6c2512e7abae52186a1170c2/transformed/savedstate-ktx-1.4.0/res
+com.mirrornode.app-core-runtime-2.2.0-2 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/0d2c3579e6e7a1032799c077dca49e62/transformed/core-runtime-2.2.0/res
+com.mirrornode.app-annotation-experimental-1.4.1-3 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/0fa1a4f8488b47e1ae588867a2a718d1/transformed/annotation-experimental-1.4.1/res
+com.mirrornode.app-core-1.17.0-4 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/res
+com.mirrornode.app-emoji2-views-helper-1.3.0-5 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/11ec324ac734c36dc51b352d148c5596/transformed/emoji2-views-helper-1.3.0/res
+com.mirrornode.app-core-ktx-1.17.0-6 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/29c128e666d812b7b0b410e4047204f6/transformed/core-ktx-1.17.0/res
+com.mirrornode.app-emoji2-1.3.0-7 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/30fd7ac1823b1e9ccb7041aa854ce03d/transformed/emoji2-1.3.0/res
+com.mirrornode.app-appcompat-resources-1.7.1-8 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/31290026491ba3ee32c7404e44f1f984/transformed/appcompat-resources-1.7.1/res
+com.mirrornode.app-drawerlayout-1.1.1-9 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/413da14eda29732e5a73fa80c97e7f0c/transformed/drawerlayout-1.1.1/res
+com.mirrornode.app-profileinstaller-1.4.0-10 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/420120134fa2fc56fd838ee6ebebf2e1/transformed/profileinstaller-1.4.0/res
+com.mirrornode.app-lifecycle-viewmodel-ktx-2.10.0-11 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/44f4440606954a87896f95a52ccb4427/transformed/lifecycle-viewmodel-ktx-2.10.0/res
+com.mirrornode.app-viewpager2-1.0.0-12 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/560825944378c310a5fc195d4599bffd/transformed/viewpager2-1.0.0/res
+com.mirrornode.app-lifecycle-process-2.10.0-13 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/639637fe9ae7c3e29ae212f34bccad70/transformed/lifecycle-process-2.10.0/res
+com.mirrornode.app-cardview-1.0.0-14 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/6d68cf4e56b246cb085bab884b8752b1/transformed/cardview-1.0.0/res
+com.mirrornode.app-material-1.13.0-15 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/76599fe2771d38776be0caceb9ac2fa8/transformed/material-1.13.0/res
+com.mirrornode.app-lifecycle-runtime-16 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/7b0521c05e3a6b3daf728742a5354334/transformed/lifecycle-runtime/res
+com.mirrornode.app-lifecycle-livedata-core-2.10.0-17 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/7b8a9712341cfe813ffff3ea60f03939/transformed/lifecycle-livedata-core-2.10.0/res
+com.mirrornode.app-activity-ktx-1.12.2-18 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/8a3b83a64b39224fcd470fb8af6c5cea/transformed/activity-ktx-1.12.2/res
+com.mirrornode.app-core-viewtree-1.0.0-19 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/8ff302ddbc2da95b423023d39166e99f/transformed/core-viewtree-1.0.0/res
+com.mirrornode.app-navigationevent-20 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/91965896a05b3314714fa6909ccfff08/transformed/navigationevent/res
+com.mirrornode.app-lifecycle-livedata-core-ktx-2.10.0-21 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/a5741322ed54d5d9b2a910223f2bd69d/transformed/lifecycle-livedata-core-ktx-2.10.0/res
+com.mirrornode.app-recyclerview-1.2.1-22 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/a655268b052e4f8af0b4754ef47dd962/transformed/recyclerview-1.2.1/res
+com.mirrornode.app-activity-1.12.2-23 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/ab814d6cb5479d7c87dfc58279daf6fb/transformed/activity-1.12.2/res
+com.mirrornode.app-dynamicanimation-1.1.0-24 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/ae606b6cf21e5014008defb5499da27b/transformed/dynamicanimation-1.1.0/res
+com.mirrornode.app-tracing-1.2.0-25 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/b5c6d4d4d25c6020262fac5eaef18d5b/transformed/tracing-1.2.0/res
+com.mirrornode.app-fragment-1.5.4-26 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/c37cf8c0dfe2dde6f585fe62553ad034/transformed/fragment-1.5.4/res
+com.mirrornode.app-coordinatorlayout-1.1.0-27 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/e10fa3db81351129a424dcdb98f3be06/transformed/coordinatorlayout-1.1.0/res
+com.mirrornode.app-lifecycle-livedata-2.10.0-28 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/e12955d9ef47fdbab556dba85fcb224e/transformed/lifecycle-livedata-2.10.0/res
+com.mirrornode.app-constraintlayout-2.1.0-29 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/e821cc9334b2576e7c082f6f3e222386/transformed/constraintlayout-2.1.0/res
+com.mirrornode.app-lifecycle-viewmodel-30 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/ee503979429124f5420ce18cf9b0bcef/transformed/lifecycle-viewmodel/res
+com.mirrornode.app-graphics-shapes-release-31 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/f0e84b1e398d334ed3748d279a89d3ea/transformed/graphics-shapes-release/res
+com.mirrornode.app-transition-1.5.0-32 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/f6217c839306cb3c051aa88e42d5028b/transformed/transition-1.5.0/res
+com.mirrornode.app-savedstate-33 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/fc33ae769f7655e04cdc8a2481a80e98/transformed/savedstate/res
+com.mirrornode.app-startup-runtime-1.1.1-34 /Users/horatiubudai/.gradle/caches/9.4.0/transforms/fd62567df047e49b29b7d7b3cd203e87/transformed/startup-runtime-1.1.1/res
+com.mirrornode.app-pngs-35 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/generated/res/pngs/debug
+com.mirrornode.app-resValues-36 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/generated/res/resValues/debug
+com.mirrornode.app-updated_navigation_xml-37 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/generated/updated_navigation_xml/debug
+com.mirrornode.app-packageDebugResources-38 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.mirrornode.app-packageDebugResources-39 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.mirrornode.app-debug-40 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.mirrornode.app-debug-41 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/debug/res
+com.mirrornode.app-main-42 /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/res

@@ -9,8 +9,10 @@ add_library(
 )
 
 find_library(log-lib log)
+find_library(android-lib android)
 
 target_link_libraries(
     mirrornode_receiver
     ${log-lib}
+    ${android-lib}
 )

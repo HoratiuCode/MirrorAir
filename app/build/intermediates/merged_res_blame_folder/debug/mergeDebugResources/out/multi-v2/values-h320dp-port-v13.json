@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mirrornode.app-mergeDebugResources-37:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/horatiubudai/.gradle/caches/9.4.0/transforms/76599fe2771d38776be0caceb9ac2fa8/transformed/material-1.13.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

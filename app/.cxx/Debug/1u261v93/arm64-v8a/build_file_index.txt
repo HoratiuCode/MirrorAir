@@ -1,0 +1,1 @@
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt

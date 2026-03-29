@@ -11,7 +11,7 @@ namespace {
 constexpr const char* kTag = "MirrorNodeNative";
 
 std::atomic<bool> g_running(false);
-std::jthread g_receiverThread;
+std::thread g_receiverThread;
 std::mutex g_mutex;
 ANativeWindow* g_window = nullptr;
 
@@ -58,7 +58,7 @@ Java_com_mirrornode_app_ReceiverNativeBridge_startReceiver(
   }
 
   g_running.store(true);
-  g_receiverThread = std::jthread(
+  g_receiverThread = std::thread(
       receiverLoop,
       std::move(receiver_name_value),
       std::move(config_path_value),
