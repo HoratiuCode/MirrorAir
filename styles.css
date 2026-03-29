@@ -1,10 +1,10 @@
 :root {
-  color-scheme: dark;
-  --bg: #000;
-  --panel: #0a0a0a;
-  --panel-border: #242424;
-  --text: #fff;
-  --muted: #bdbdbd;
+  color-scheme: light;
+  --bg: #fff;
+  --panel: #fff;
+  --panel-border: #111;
+  --text: #000;
+  --muted: #444;
 }
 
 * {
@@ -81,16 +81,16 @@ h1 {
   justify-content: center;
   min-width: 12rem;
   padding: 0.95rem 1.4rem;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   text-decoration: none;
   font-weight: 700;
-  color: #fff;
-  background: #000;
+  color: #000;
+  background: #fff;
 }
 
 .button.primary {
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 
 .panel {
