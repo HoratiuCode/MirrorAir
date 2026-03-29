@@ -10,6 +10,7 @@ import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
@@ -49,7 +50,19 @@ class ReceiverService : Service() {
 
     private fun startReceiver() {
         currentConfig = ReceiverConfig.load(this)
-        startForeground(NOTIFICATION_ID, notification(currentConfig, "Starting receiver..."))
+        val foregroundStarted = runCatching {
+            startForeground(NOTIFICATION_ID, notification(currentConfig, "Starting receiver..."))
+        }.isSuccess
+
+        if (!foregroundStarted) {
+            updateState(
+                status = "Receiver could not start",
+                running = false,
+                detail = "Foreground service startup was blocked on this device.",
+            )
+            stopSelf()
+            return
+        }
 
         if (isRunning) {
             updateState(
@@ -163,8 +176,12 @@ class ReceiverService : Service() {
             running = running,
             detailText = detail,
         )
-        val manager = getSystemService(NotificationManager::class.java)
-        manager.notify(NOTIFICATION_ID, notification(currentConfig, status))
+        if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+            val manager = getSystemService(NotificationManager::class.java)
+            runCatching {
+                manager.notify(NOTIFICATION_ID, notification(currentConfig, status))
+            }
+        }
     }
 
     companion object {
