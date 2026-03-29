@@ -8,7 +8,7 @@ MirrorAir is an Android receiver project intended to let a Mac discover an Andro
 - Foreground `ReceiverService` with multicast lock and DNS-SD advertisement for `_airplay._tcp` and `_raop._tcp`.
 - Config-driven receiver name from `app/src/main/assets/receiver.properties`.
 - Vendored upstream `RPiPlay` code in `vendor/RPiPlay`.
-- Static download website in `docs/` for GitHub Pages or any static host.
+- Static download website at the repo root for Vercel, plus `docs/` for GitHub Pages.
 
 ## What is still missing
 
@@ -24,16 +24,20 @@ So the repo is now structured for the real port, but it still needs native proto
 
 ## Website
 
-The static website lives in `docs/`.
+The static website is available in two places:
 
+- `index.html`
+- `styles.css`
+- `app.js`
+- `downloads/`
 - `docs/index.html`
 - `docs/styles.css`
 - `docs/app.js`
 
-For Vercel, the repo now includes `vercel.json` so the site is served from `docs/` at the domain root.
+Vercel should use the repo root directly. GitHub Pages can still use `docs/`.
 
 This can be published with GitHub Pages and used as the download page for the APK once you build one and place it in `docs/downloads/`.
 
 ## Download assets
 
-Use `scripts/prepare-downloads.sh` after generating an APK in Android Studio. It copies the APK into `docs/downloads/` so the website can serve it directly.
+Use `scripts/prepare-downloads.sh` after generating an APK in Android Studio. It copies the APK into both `downloads/` and `docs/downloads/`.

@@ -1,28 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/docs/index.html"
-    },
-    {
-      "source": "/styles.css",
-      "destination": "/docs/styles.css"
-    },
-    {
-      "source": "/app.js",
-      "destination": "/docs/app.js"
-    },
-    {
-      "source": "/downloads/:path*",
-      "destination": "/docs/downloads/:path*"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/docs/:path*"
-    }
-  ],
   "headers": [
     {
       "source": "/downloads/:path*",

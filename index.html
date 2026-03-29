@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MirrorAir</title>
+    <meta
+      name="description"
+      content="MirrorAir turns an Android device into an AirPlay-style mirroring target for Mac discovery and wireless screen display."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">MirrorAir</p>
+        <h1>Mirror your Mac screen to Android.</h1>
+        <p class="lede">
+          A minimal Android receiver project with AirPlay-style discovery, a fullscreen receiver surface,
+          and a download page ready for APK hosting.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="/downloads/MirrorAir-debug.apk">Download APK</a>
+          <a class="button secondary" href="https://github.com/HoratiuCode/MirrorAir/archive/refs/heads/main.zip">Download Source</a>
+        </div>
+        <p class="note" id="apk-status">APK status: waiting for a built APK in <code>downloads/</code>.</p>
+      </section>
+
+      <section class="panel">
+        <h2>How it works</h2>
+        <p>
+          The Android app starts a foreground receiver service, advertises itself on the local Wi-Fi network,
+          and is designed to host a native AirPlay-compatible mirroring engine.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Android Receiver</h3>
+          <p>Minimal black UI, configurable receiver name, auto-start, multicast support, and DNS-SD discovery.</p>
+        </article>
+        <article class="card">
+          <h3>Mac Detection</h3>
+          <p>The app publishes AirPlay-style network services so a Mac can see it as a candidate receiver target.</p>
+        </article>
+        <article class="card">
+          <h3>Direct Download</h3>
+          <p>Host the APK in <code>downloads/</code> and let Android devices install it directly from this page.</p>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
