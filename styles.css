@@ -1,12 +1,10 @@
 :root {
   color-scheme: dark;
-  --bg: #050505;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel-border: rgba(255, 255, 255, 0.12);
-  --text: #f4f4f1;
-  --muted: #a7a59d;
-  --accent: #c8ff65;
-  --accent-ink: #111;
+  --bg: #000;
+  --panel: #0a0a0a;
+  --panel-border: #242424;
+  --text: #fff;
+  --muted: #bdbdbd;
 }
 
 * {
@@ -16,15 +14,13 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(200, 255, 101, 0.12), transparent 32rem),
-    linear-gradient(180deg, #111 0%, var(--bg) 32%);
+  background: var(--bg);
   color: var(--text);
-  font-family: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .page {
-  width: min(100%, 72rem);
+  width: min(100%, 64rem);
   margin: 0 auto;
   padding: 3rem 1.25rem 4rem;
 }
@@ -34,17 +30,16 @@ body {
 .card {
   border: 1px solid var(--panel-border);
   background: var(--panel);
-  backdrop-filter: blur(12px);
 }
 
 .hero {
   padding: 3rem;
-  border-radius: 1.75rem;
+  border-radius: 1rem;
 }
 
 .eyebrow {
   margin: 0 0 0.75rem;
-  color: var(--accent);
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.78rem;
@@ -86,25 +81,22 @@ h1 {
   justify-content: center;
   min-width: 12rem;
   padding: 0.95rem 1.4rem;
-  border-radius: 999px;
+  border: 1px solid #fff;
   text-decoration: none;
   font-weight: 700;
+  color: #fff;
+  background: #000;
 }
 
 .button.primary {
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-
-.button.secondary {
-  color: var(--text);
-  border: 1px solid var(--panel-border);
+  background: #fff;
+  color: #000;
 }
 
 .panel {
   margin-top: 1.25rem;
   padding: 1.5rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 
 .grid {
@@ -116,11 +108,11 @@ h1 {
 
 .card {
   padding: 1.5rem;
-  border-radius: 1.4rem;
+  border-radius: 1rem;
 }
 
 code {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Courier New", monospace;
 }
 
 @media (max-width: 640px) {
