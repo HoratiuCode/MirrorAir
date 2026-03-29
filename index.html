@@ -6,7 +6,7 @@
     <title>MirrorAir</title>
     <meta
       name="description"
-      content="MirrorAir turns an Android device into an AirPlay-style mirroring target for Mac discovery and wireless screen display."
+      content="MirrorAir provides a simple wired Android-to-Mac mirroring helper for use over USB cable."
     />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -21,38 +21,37 @@
       <section class="hero">
         <img class="hero-image" src="/red-apple_1f34e.png" alt="MirrorAir apple icon" />
         <p class="eyebrow">MirrorAir</p>
-        <h1>Mirror your Mac screen to Android.</h1>
+        <h1>Mirror your Android to Mac with a cable.</h1>
         <p class="lede">
-          A minimal Android receiver project with AirPlay-style discovery, a fullscreen receiver surface,
-          and a download page ready for APK hosting.
+          Download a Mac helper package that launches wired Android screen mirroring over USB using a simple local script.
         </p>
         <div class="actions">
-          <a class="button primary button-disabled" id="downloadButton" href="#" aria-disabled="true">APK Coming Soon</a>
+          <a class="button primary" id="downloadButton" href="/downloads/MirrorAir-Mac-Helper.zip">Download Mac Helper</a>
           <a class="button secondary" href="https://github.com/HoratiuCode/MirrorAir/archive/refs/heads/main.zip">Download Source</a>
         </div>
-        <p class="note" id="apk-status">APK status: waiting for a built APK in <code>downloads/</code>.</p>
+        <p class="note" id="apk-status">Helper status: packaged and ready in <code>downloads/</code>.</p>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h3>Android Receiver</h3>
-          <p>Minimal black UI, configurable receiver name, auto-start, multicast support, and DNS-SD discovery.</p>
+          <h3>USB Mirroring</h3>
+          <p>Use a cable between Android and Mac for a more reliable setup than Wi-Fi-based mirroring.</p>
         </article>
         <article class="card">
-          <h3>Mac Detection</h3>
-          <p>The app publishes AirPlay-style network services so a Mac can see it as a candidate receiver target.</p>
+          <h3>Mac Helper</h3>
+          <p>The package includes a script and JSON config that start Android-to-Mac mirroring with local tools.</p>
         </article>
         <article class="card">
           <h3>Direct Download</h3>
-          <p>Host the APK in <code>downloads/</code> and let Android devices install it directly from this page.</p>
+          <p>Host the helper zip in <code>downloads/</code> and download it directly from this page.</p>
         </article>
       </section>
 
       <section class="panel">
-        <h2>Install</h2>
+        <h2>How To Use</h2>
         <p>
-          Build the Android app, copy the APK into <code>downloads/</code>, then open this page on your Android
-          device and install it.
+          Download the helper, install <code>scrcpy</code> and <code>adb</code> on your Mac, connect your Android
+          device with a USB cable, enable USB debugging, then run the included script.
         </p>
       </section>
     </main>

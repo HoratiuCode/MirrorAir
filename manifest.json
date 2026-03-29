@@ -1,7 +1,7 @@
 {
   "name": "MirrorAir",
   "short_name": "MirrorAir",
-  "description": "Download MirrorAir on Android and use it as an AirPlay-style mirroring target.",
+  "description": "Download the MirrorAir Mac helper for wired Android-to-Mac mirroring.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
