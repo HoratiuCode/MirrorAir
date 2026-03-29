@@ -11,7 +11,7 @@ data class ReceiverConfig(
 ) {
     companion object {
         private const val CONFIG_FILE_NAME = "receiver.properties"
-        private const val DEFAULT_NAME = "MirrorNode"
+        private const val DEFAULT_NAME = "MirrorAir"
         private const val DEFAULT_AIRPLAY_PORT = 7000
         private const val DEFAULT_RAOP_PORT = 5000
 

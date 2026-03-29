@@ -163,7 +163,7 @@ class ReceiverService : Service() {
         val manager = getSystemService(NotificationManager::class.java)
         val channel = NotificationChannel(
             NOTIFICATION_CHANNEL_ID,
-            "MirrorNode Receiver",
+            "MirrorAir Receiver",
             NotificationManager.IMPORTANCE_LOW,
         )
         manager.createNotificationChannel(channel)
@@ -193,10 +193,10 @@ class ReceiverService : Service() {
 
         private val stateFlow = MutableStateFlow(
             ReceiverState(
-                receiverName = "MirrorNode",
+                receiverName = "MirrorAir",
                 statusText = "Ready to receive",
                 running = false,
-                detailText = "Open Screen Mirroring on your Mac and choose MirrorNode.",
+                detailText = "Open Screen Mirroring on your Mac and choose MirrorAir.",
             ),
         )
 
