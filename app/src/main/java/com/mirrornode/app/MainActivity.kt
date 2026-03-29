@@ -57,8 +57,6 @@ class MainActivity : ComponentActivity() {
         stopButton.setOnClickListener {
             startService(ReceiverService.stopIntent(this))
         }
-
-        ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
