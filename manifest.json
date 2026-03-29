@@ -1,7 +1,7 @@
 {
-  "name": "MirrorAir",
-  "short_name": "MirrorAir",
-  "description": "Download the MirrorAir Mac helper for wired Android-to-Mac mirroring.",
+  "name": "MirrorNode",
+  "short_name": "MirrorNode",
+  "description": "Download the current Android APK build of the MirrorNode receiver app shell.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

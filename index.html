@@ -6,7 +6,7 @@
     <title>MirrorAir</title>
     <meta
       name="description"
-      content="MirrorAir provides a simple wired Android-to-Mac mirroring helper for use over USB cable."
+      content="MirrorNode is an Android receiver app shell for Mac-to-Android screen mirroring experiments."
     />
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,38 +20,37 @@
     <main class="page">
       <section class="hero">
         <img class="hero-image" src="/red-apple_1f34e.png" alt="MirrorAir apple icon" />
-        <p class="eyebrow">MirrorAir</p>
-        <h1>Mirror your Android to Mac with a cable.</h1>
+        <p class="eyebrow">MirrorNode</p>
+        <h1>Download the Android receiver app.</h1>
         <p class="lede">
-          Download a Mac helper package that launches wired Android screen mirroring over USB using a simple local script.
+          Install the current Android APK build and run the receiver app shell on your Android device.
         </p>
         <div class="actions">
-          <a class="button primary" id="downloadButton" href="/downloads/MirrorAir-Mac-Helper.zip">Download Mac Helper</a>
+          <a class="button primary" id="downloadButton" href="/downloads/MirrorNode.apk">Download APK</a>
           <a class="button secondary" href="https://github.com/HoratiuCode/MirrorAir/archive/refs/heads/main.zip">Download Source</a>
         </div>
-        <p class="note" id="apk-status">Helper status: packaged and ready in <code>downloads/</code>.</p>
+        <p class="note" id="apk-status">APK status: packaged and ready in <code>downloads/</code>.</p>
       </section>
 
       <section class="grid">
         <article class="card">
-          <h3>USB Mirroring</h3>
-          <p>Use a cable between Android and Mac for a more reliable setup than Wi-Fi-based mirroring.</p>
+          <h3>Android App</h3>
+          <p>The APK launches the fullscreen receiver shell with the local receiver service and network advertisement.</p>
         </article>
         <article class="card">
-          <h3>Mac Helper</h3>
-          <p>The package includes a script and JSON config that start Android-to-Mac mirroring with local tools.</p>
+          <h3>Current State</h3>
+          <p>This build is the app shell and service layer. The full AirPlay-compatible mirroring engine is still in progress.</p>
         </article>
         <article class="card">
           <h3>Direct Download</h3>
-          <p>Host the helper zip in <code>downloads/</code> and download it directly from this page.</p>
+          <p>Host the APK in <code>downloads/</code> and download it directly from this page on your Android device.</p>
         </article>
       </section>
 
       <section class="panel">
-        <h2>How To Use</h2>
+        <h2>Install</h2>
         <p>
-          Download the helper, install <code>scrcpy</code> and <code>adb</code> on your Mac, connect your Android
-          device with a USB cable, enable USB debugging, then run the included script.
+          Download the APK, allow app installs from your browser if Android asks, then open the app on your device.
         </p>
       </section>
     </main>
