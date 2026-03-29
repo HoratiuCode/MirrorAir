@@ -18,12 +18,18 @@ class ReceiverService : Service() {
     private lateinit var discoveryManager: AirPlayDiscoveryManager
     private var multicastLock: WifiManager.MulticastLock? = null
     private var isRunning = false
+    private lateinit var currentConfig: ReceiverConfig
 
     override fun onCreate() {
         super.onCreate()
         discoveryManager = AirPlayDiscoveryManager(this)
+        currentConfig = ReceiverConfig.load(this)
         createNotificationChannel()
-        updateState("Waiting for connection...", false)
+        updateState(
+            status = "Ready to receive",
+            running = false,
+            detail = "Open Screen Mirroring on your Mac and choose ${currentConfig.receiverName}.",
+        )
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -42,28 +48,53 @@ class ReceiverService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     private fun startReceiver() {
-        val config = ReceiverConfig.load(this)
-        startForeground(NOTIFICATION_ID, notification(config, "Waiting for connection..."))
+        currentConfig = ReceiverConfig.load(this)
+        startForeground(NOTIFICATION_ID, notification(currentConfig, "Starting receiver..."))
 
         if (isRunning) {
-            updateState("Waiting for connection...", true)
+            updateState(
+                status = "Waiting for connection...",
+                running = true,
+                detail = "Your Mac should discover ${currentConfig.receiverName} on the same Wi-Fi network.",
+            )
             return
         }
 
-        acquireMulticastLock()
-        discoveryManager.register(config)
-        val started = ReceiverNativeBridge.startReceiver(
-            receiverName = config.receiverName,
-            configPath = ReceiverConfig.configFile(this).absolutePath,
-            airPlayPort = config.airPlayPort,
-            raopPort = config.raopPort,
-        )
+        val started = runCatching {
+            acquireMulticastLock()
+            discoveryManager.register(currentConfig)
+            ReceiverNativeBridge.startReceiver(
+                receiverName = currentConfig.receiverName,
+                configPath = ReceiverConfig.configFile(this).absolutePath,
+                airPlayPort = currentConfig.airPlayPort,
+                raopPort = currentConfig.raopPort,
+            )
+        }.getOrElse {
+            shutdownReceiver()
+            updateState(
+                status = "Receiver engine failed",
+                running = false,
+                detail = it.message ?: "The receiver could not start.",
+            )
+            stopForeground(STOP_FOREGROUND_DETACH)
+            stopSelf()
+            return
+        }
 
         isRunning = started
         if (started) {
-            updateState("Waiting for connection...", true)
+            updateState(
+                status = "Waiting for connection...",
+                running = true,
+                detail = "Your Mac should discover ${currentConfig.receiverName} on the same Wi-Fi network.",
+            )
         } else {
-            updateState("Receiver engine failed to start", false)
+            shutdownReceiver()
+            updateState(
+                status = "Receiver engine failed",
+                running = false,
+                detail = "The native mirroring engine returned an error during startup.",
+            )
             stopForeground(STOP_FOREGROUND_DETACH)
             stopSelf()
         }
@@ -86,7 +117,11 @@ class ReceiverService : Service() {
             }
         }
         multicastLock = null
-        updateState("Receiver stopped", false)
+        updateState(
+            status = "Receiver stopped",
+            running = false,
+            detail = "Press Start Receiver to advertise this device again.",
+        )
         stopForeground(STOP_FOREGROUND_REMOVE)
     }
 
@@ -121,15 +156,15 @@ class ReceiverService : Service() {
         manager.createNotificationChannel(channel)
     }
 
-    private fun updateState(status: String, running: Boolean) {
-        val config = ReceiverConfig.load(this)
+    private fun updateState(status: String, running: Boolean, detail: String) {
         stateFlow.value = ReceiverState(
-            receiverName = config.receiverName,
+            receiverName = currentConfig.receiverName,
             statusText = status,
             running = running,
+            detailText = detail,
         )
         val manager = getSystemService(NotificationManager::class.java)
-        manager.notify(NOTIFICATION_ID, notification(config, status))
+        manager.notify(NOTIFICATION_ID, notification(currentConfig, status))
     }
 
     companion object {
@@ -142,8 +177,9 @@ class ReceiverService : Service() {
         private val stateFlow = MutableStateFlow(
             ReceiverState(
                 receiverName = "MirrorNode",
-                statusText = "Waiting for connection...",
+                statusText = "Ready to receive",
                 running = false,
+                detailText = "Open Screen Mirroring on your Mac and choose MirrorNode.",
             ),
         )
 

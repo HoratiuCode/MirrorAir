@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">MirrorNode</string>
     <string name="default_receiver_name">MirrorNode</string>
-    <string name="default_status">Waiting for connection...</string>
+    <string name="default_status">Ready to receive</string>
+    <string name="default_detail">Open Screen Mirroring on your Mac and choose MirrorNode.</string>
     <string name="start_receiver">Start Receiver</string>
     <string name="stop_receiver">Stop Receiver</string>
 </resources>

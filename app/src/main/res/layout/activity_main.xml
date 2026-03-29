@@ -14,6 +14,7 @@
         android:id="@+id/overlayPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#33000000"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="24dp">
@@ -37,6 +38,17 @@
             android:text="@string/default_status"
             android:textColor="#B3FFFFFF"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/detailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:maxWidth="300dp"
+            android:text="@string/default_detail"
+            android:textColor="#80FFFFFF"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/startButton"
