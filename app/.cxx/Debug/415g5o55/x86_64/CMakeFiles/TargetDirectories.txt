@@ -1,0 +1,5 @@
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/415g5o55/x86_64/CMakeFiles/mirrornode_receiver.dir
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/415g5o55/x86_64/CMakeFiles/mirroraire_plist.dir
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/415g5o55/x86_64/CMakeFiles/mirroraire_rpiplay.dir
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/415g5o55/x86_64/CMakeFiles/edit_cache.dir
+/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/415g5o55/x86_64/CMakeFiles/rebuild_cache.dir

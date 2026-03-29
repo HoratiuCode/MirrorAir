@@ -1,26 +1,22 @@
 [
     {
-        "merged": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-debug-39:/drawable_ic_launcher_foreground.png.flat",
-        "source": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-main-41:/drawable/ic_launcher_foreground.png"
+        "merged": "com.mirrornode.app-debug-39:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.mirrornode.app-main-41:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.mirrornode.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.mirrornode.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "com.mirrornode.app-debug-39:/drawable_ic_launcher_foreground.xml.flat",
         "source": "com.mirrornode.app-main-41:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.mirrornode.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.mirrornode.app-main-41:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-debug-39:/drawable_ic_launcher_background.xml.flat",
-        "source": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-main-41:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-debug-39:/layout_activity_main.xml.flat",
-        "source": "/Users/horatiubudai/.gradle/daemon/9.4.0/com.mirrornode.app-main-41:/layout/activity_main.xml"
+        "merged": "com.mirrornode.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.mirrornode.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
     }
 ]

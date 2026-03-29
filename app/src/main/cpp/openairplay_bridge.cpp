@@ -251,7 +251,7 @@ extern "C" void mirroraire_android_video_destroy_renderer(void) {
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_mirrornode_app_ReceiverNativeBridge_startReceiver(
+Java_com_mirrornode_app_ReceiverNativeBridge_nativeStartReceiver(
     JNIEnv* env,
     jobject /* this */,
     jstring receiver_name,
@@ -317,7 +317,7 @@ Java_com_mirrornode_app_ReceiverNativeBridge_startReceiver(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface(
+Java_com_mirrornode_app_ReceiverNativeBridge_nativeSetVideoSurface(
     JNIEnv* env,
     jobject /* this */,
     jobject surface) {
@@ -335,7 +335,7 @@ Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_mirrornode_app_ReceiverNativeBridge_stopReceiver(
+Java_com_mirrornode_app_ReceiverNativeBridge_nativeStopReceiver(
     JNIEnv* /* env */,
     jobject /* this */) {
   std::scoped_lock lock(g_mutex);
