@@ -24,9 +24,7 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
 
     private val permissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
-            startReceiverIfPermissionsGranted()
-        }
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,8 +63,6 @@ class MainActivity : ComponentActivity() {
         stopButton.setOnClickListener {
             startService(ReceiverService.stopIntent(this))
         }
-
-        startReceiverIfPermissionsGranted()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -139,6 +135,8 @@ class MainActivity : ComponentActivity() {
             return
         }
 
-        ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+        runCatching {
+            ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+        }
     }
 }

@@ -13,17 +13,19 @@
     <LinearLayout
         android:id="@+id/overlayPanel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/mirrorair_background"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:background="#CCFFFFFF"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/appIconPreview"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginBottom="22dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_launcher_foreground" />
 
@@ -34,7 +36,7 @@
             android:gravity="center"
             android:text="@string/default_receiver_name"
             android:textColor="@color/mirrorair_text"
-            android:textSize="34sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
@@ -64,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:maxWidth="300dp"
+            android:maxWidth="320dp"
             android:text="@string/default_detail"
             android:textColor="@color/mirrorair_muted"
             android:textSize="14sp" />

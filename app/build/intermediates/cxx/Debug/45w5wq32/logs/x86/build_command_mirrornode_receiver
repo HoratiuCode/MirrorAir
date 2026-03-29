@@ -1,0 +1,4 @@
+/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja \
+  -C \
+  "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/x86" \
+  mirrornode_receiver

@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/x86'
+ninja: no work to do.

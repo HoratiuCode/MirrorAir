@@ -1,0 +1,197 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 30 min SDK version: armeabi-v7a",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "rebuilding JSON /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/armeabi-v7a/android_gradle_build.json due to:",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "- a file changed",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "  - /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt (LAST_MODIFIED_CHANGED)",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "  - /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/rpiplay_port_sources.cmake (LAST_MODIFIED_CHANGED)",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "/opt/homebrew/Cellar/openjdk@21/21.0.10/libexec/openjdk.jdk/Contents/Home/bin/java \\\n  --class-path \\\n  /Users/horatiubudai/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar \\\n  com.google.prefab.cli.AppKt \\\n  --build-system \\\n  cmake \\\n  --platform \\\n  android \\\n  --abi \\\n  armeabi-v7a \\\n  --os-version \\\n  30 \\\n  --stl \\\n  c++_shared \\\n  --ndk-version \\\n  27 \\\n  --output \\\n  /var/folders/st/36nwzm1s68dfj3mh7w359wx00000gn/T/agp-prefab-staging2103958639777483407/staged-cli-output \\\n  /Users/horatiubudai/.gradle/caches/9.4.0/transforms/aac0911ec9c321795a9c9f0e21e66f77/transformed/openssl-1.1.1q-beta-1/prefab\n",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "Received process result: 0",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "keeping json folder \u0027/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/armeabi-v7a\u0027 but regenerating project",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "executing cmake /opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/cmake \\\n  \"-H/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp\" \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d30 \\\n  -DANDROID_PLATFORM\u003dandroid-30 \\\n  -DANDROID_ABI\u003darmeabi-v7a \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a \\\n  -DANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973 \\\n  -DCMAKE_ANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_CXX_FLAGS\u003d-std\u003dc++20 \\\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/armeabi-v7a\" \\\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/armeabi-v7a\" \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  \"-DCMAKE_FIND_ROOT_PATH\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/prefab/armeabi-v7a/prefab\" \\\n  \"-B/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/armeabi-v7a\" \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/cmake \\\n  \"-H/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp\" \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d30 \\\n  -DANDROID_PLATFORM\u003dandroid-30 \\\n  -DANDROID_ABI\u003darmeabi-v7a \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a \\\n  -DANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973 \\\n  -DCMAKE_ANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_CXX_FLAGS\u003d-std\u003dc++20 \\\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/armeabi-v7a\" \\\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/armeabi-v7a\" \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  \"-DCMAKE_FIND_ROOT_PATH\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/prefab/armeabi-v7a/prefab\" \\\n  \"-B/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/armeabi-v7a\" \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "Received process result: 0",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "Exiting generation of /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/armeabi-v7a/compile_commands.json.bin normally",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "done executing cmake",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "deleted unexpected build output /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/armeabi-v7a/libc++_shared.so in incremental regenerate",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  }
+]

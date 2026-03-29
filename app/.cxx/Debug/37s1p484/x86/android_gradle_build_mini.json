@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/rpiplay_port_sources.cmake"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/37s1p484/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "mirrornode_receiver::@6890427a1f51a3e7e1df": {
+      "artifactName": "mirrornode_receiver",
+      "abi": "x86",
+      "output": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/37s1p484/obj/x86/libmirrornode_receiver.so",
+      "runtimeFiles": []
+    }
+  }
+}

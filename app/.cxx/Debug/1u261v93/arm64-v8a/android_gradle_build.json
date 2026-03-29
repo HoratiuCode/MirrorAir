@@ -1,6 +1,7 @@
 {
   "buildFiles": [
-    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt"
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/rpiplay_port_sources.cmake"
   ],
   "cleanCommandsComponents": [
     [

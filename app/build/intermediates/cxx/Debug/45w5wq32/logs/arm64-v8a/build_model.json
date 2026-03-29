@@ -1,0 +1,210 @@
+{
+  "info": {
+    "name": "arm64-v8a",
+    "bitness": 64,
+    "isDefault": true,
+    "isDeprecated": false,
+    "architecture": "arm64",
+    "triple": "aarch64-linux-android",
+    "llvmTriple": "aarch64-none-linux-android"
+  },
+  "cxxBuildFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/arm64-v8a",
+  "soFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/45w5wq32/obj/arm64-v8a",
+  "soRepublishFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cmake/debug/obj/arm64-v8a",
+  "abiPlatformVersion": 30,
+  "cmake": {
+    "effectiveConfiguration": {
+      "inheritEnvironments": [],
+      "variables": []
+    }
+  },
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DMIRRORAIR_ENABLE_RPIPLAY_PORT\u003dON",
+      "-DANDROID_STL\u003dc++_shared"
+    ],
+    "cFlagsList": [],
+    "cppFlagsList": [
+      "-std\u003dc++20"
+    ],
+    "variantName": "debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "armeabi-v7a",
+      "arm64-v8a",
+      "x86",
+      "x86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx",
+      "intermediatesBaseFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates",
+      "intermediatesFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app",
+      "moduleBuildFile": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build.gradle.kts",
+      "makeFile": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "ndkFolder": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973",
+      "ndkFolderBeforeSymLinking": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973",
+      "ndkVersion": "27.0.12077973",
+      "ndkSupportedAbiList": [
+        "armeabi-v7a",
+        "arm64-v8a",
+        "riscv64",
+        "x86",
+        "x86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "armeabi-v7a",
+        "arm64-v8a",
+        "x86",
+        "x86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkMetaPlatforms": {
+        "min": 21,
+        "max": 35,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30,
+          "S": 31,
+          "Sv2": 32,
+          "Tiramisu": 33,
+          "UpsideDownCake": 34,
+          "VanillaIceCream": 35
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "name": "armeabi-v7a",
+          "bitness": 32,
+          "isDefault": true,
+          "isDeprecated": false,
+          "architecture": "arm",
+          "triple": "arm-linux-androideabi",
+          "llvmTriple": "armv7-none-linux-androideabi"
+        },
+        {
+          "name": "arm64-v8a",
+          "bitness": 64,
+          "isDefault": true,
+          "isDeprecated": false,
+          "architecture": "arm64",
+          "triple": "aarch64-linux-android",
+          "llvmTriple": "aarch64-none-linux-android"
+        },
+        {
+          "name": "riscv64",
+          "bitness": 64,
+          "isDefault": false,
+          "isDeprecated": false,
+          "architecture": "riscv64",
+          "triple": "riscv64-linux-android",
+          "llvmTriple": "riscv64-none-linux-android"
+        },
+        {
+          "name": "x86",
+          "bitness": 32,
+          "isDefault": true,
+          "isDeprecated": false,
+          "architecture": "x86",
+          "triple": "i686-linux-android",
+          "llvmTriple": "i686-none-linux-android"
+        },
+        {
+          "name": "x86_64",
+          "bitness": 64,
+          "isDefault": true,
+          "isDeprecated": false,
+          "architecture": "x86_64",
+          "triple": "x86_64-linux-android",
+          "llvmTriple": "x86_64-none-linux-android"
+        }
+      ],
+      "cmakeToolchainFile": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/build/cmake/android.toolchain.cmake",
+      "cmake": {
+        "cmakeExe": "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/cmake",
+        "cmakeVersionFromDsl": "3.22.1"
+      },
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "armeabi-v7a": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "arm64-v8a": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "riscv64": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/riscv64-linux-android/libc++_shared.so",
+          "x86": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "x86_64": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir",
+        "sdkFolder": "/opt/homebrew/share/android-commandlinetools",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": true
+      },
+      "outputOptions": [],
+      "ninjaExe": "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+      "hasBuildTimeInformation": true
+    },
+    "prefabClassPaths": [
+      "/Users/horatiubudai/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar"
+    ],
+    "prefabPackages": [
+      "/Users/horatiubudai/.gradle/caches/9.4.0/transforms/aac0911ec9c321795a9c9f0e21e66f77/transformed/openssl-1.1.1q-beta-1/prefab"
+    ],
+    "prefabPackageConfigurations": [],
+    "stlType": "c++_shared",
+    "optimizationTag": "Debug"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/prefab/arm64-v8a",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "45w5wq3246q2q3e3k6o3d35402n1sl25u4e66k1f2l3u4i5z6v4j2o5d5u",
+  "fullConfigurationHashKey": "# Values used to calculate the hash in this folder name.\n# Should not depend on the absolute path of the project itself.\n#   - AGP: 8.13.2.\n#   - $NDK is the path to NDK 27.0.12077973.\n#   - $PROJECT is the path to the parent folder of the root Gradle build file.\n#   - $ABI is the ABI to be built with. The specific value doesn\u0027t contribute to the value of the hash.\n#   - $HASH is the hash value computed from this text.\n#   - $CMAKE is the path to CMake 3.22.1.\n#   - $NINJA is the path to Ninja.\n-H$PROJECT/app/src/main/cpp\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d30\n-DANDROID_PLATFORM\u003dandroid-30\n-DANDROID_ABI\u003d$ABI\n-DCMAKE_ANDROID_ARCH_ABI\u003d$ABI\n-DANDROID_NDK\u003d$NDK\n-DCMAKE_ANDROID_NDK\u003d$NDK\n-DCMAKE_TOOLCHAIN_FILE\u003d$NDK/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d$NINJA\n-DCMAKE_CXX_FLAGS\u003d-std\u003dc++20\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d$PROJECT/app/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d$PROJECT/app/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DCMAKE_FIND_ROOT_PATH\u003d$PROJECT/app/.cxx/Debug/$HASH/prefab/$ABI/prefab\n-B$PROJECT/app/.cxx/Debug/$HASH/$ABI\n-GNinja\n-DMIRRORAIR_ENABLE_RPIPLAY_PORT\u003dON\n-DANDROID_STL\u003dc++_shared",
+  "configurationArguments": [
+    "-H/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp",
+    "-DCMAKE_SYSTEM_NAME\u003dAndroid",
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
+    "-DCMAKE_SYSTEM_VERSION\u003d30",
+    "-DANDROID_PLATFORM\u003dandroid-30",
+    "-DANDROID_ABI\u003darm64-v8a",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a",
+    "-DANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973",
+    "-DCMAKE_ANDROID_NDK\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973",
+    "-DCMAKE_TOOLCHAIN_FILE\u003d/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/build/cmake/android.toolchain.cmake",
+    "-DCMAKE_MAKE_PROGRAM\u003d/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+    "-DCMAKE_CXX_FLAGS\u003d-std\u003dc++20",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/45w5wq32/obj/arm64-v8a",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/45w5wq32/obj/arm64-v8a",
+    "-DCMAKE_BUILD_TYPE\u003dDebug",
+    "-DCMAKE_FIND_ROOT_PATH\u003d/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/prefab/arm64-v8a/prefab",
+    "-B/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/arm64-v8a",
+    "-GNinja",
+    "-DMIRRORAIR_ENABLE_RPIPLAY_PORT\u003dON",
+    "-DANDROID_STL\u003dc++_shared"
+  ],
+  "stlLibraryFile": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+  "intermediatesParentFolder": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/45w5wq32"
+}

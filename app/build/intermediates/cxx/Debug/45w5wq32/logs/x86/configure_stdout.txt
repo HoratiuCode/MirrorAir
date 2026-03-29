@@ -1,0 +1,4 @@
+-- Experimental Android RPiPlay port source set enabled
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/45w5wq32/x86

@@ -16,6 +16,8 @@ android {
 
     externalNativeBuild {
       cmake {
+        arguments += "-DMIRRORAIR_ENABLE_RPIPLAY_PORT=ON"
+        arguments += "-DANDROID_STL=c++_shared"
         cppFlags += "-std=c++20"
       }
     }
@@ -33,6 +35,7 @@ android {
 
   buildFeatures {
     buildConfig = true
+    prefab = true
   }
 
   compileOptions {
@@ -64,5 +67,6 @@ dependencies {
   implementation("androidx.activity:activity-ktx:1.12.2")
   implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
   implementation("com.google.android.material:material:1.13.0")
+  implementation("com.android.ndk.thirdparty:openssl:1.1.1q-beta-1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 }

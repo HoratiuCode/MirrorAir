@@ -1,0 +1,19 @@
+/opt/homebrew/Cellar/openjdk@21/21.0.10/libexec/openjdk.jdk/Contents/Home/bin/java \
+  --class-path \
+  /Users/horatiubudai/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar \
+  com.google.prefab.cli.AppKt \
+  --build-system \
+  cmake \
+  --platform \
+  android \
+  --abi \
+  armeabi-v7a \
+  --os-version \
+  30 \
+  --stl \
+  c++_shared \
+  --ndk-version \
+  27 \
+  --output \
+  /var/folders/st/36nwzm1s68dfj3mh7w359wx00000gn/T/agp-prefab-staging2103958639777483407/staged-cli-output \
+  /Users/horatiubudai/.gradle/caches/9.4.0/transforms/aac0911ec9c321795a9c9f0e21e66f77/transformed/openssl-1.1.1q-beta-1/prefab

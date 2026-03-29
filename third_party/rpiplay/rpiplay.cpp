@@ -82,6 +82,9 @@ static audio_renderer_t *audio_renderer = NULL;
 static logger_t *render_logger = NULL;
 
 static const video_renderer_list_entry_t video_renderers[] = {
+#if defined(HAS_ANDROID_RENDERER)
+    {"android", "Android MediaCodec H.264 renderer", video_renderer_android_init},
+#endif
 #if defined(HAS_RPI_RENDERER)
     {"rpi", "Raspberry Pi OpenMAX accelerated H.264 renderer", video_renderer_rpi_init},
 #endif
@@ -211,6 +214,7 @@ void print_info(char *name) {
     printf("-v/-h                 Displays this help and version information\n");
 }
 
+#ifndef MIRRORAIR_RPIPLAY_LIBRARY
 int main(int argc, char *argv[]) {
     init_signals();
     
@@ -313,6 +317,7 @@ int main(int argc, char *argv[]) {
     LOGI("Stopping...");
     stop_server();
 }
+#endif
 
 // Server callbacks
 extern "C" void conn_init(void *cls) {
@@ -375,6 +380,18 @@ extern "C" void log_callback(void *cls, int level, const char *msg) {
 
 int start_server(std::vector<char> hw_addr, std::string name, bool debug_log,
                  video_renderer_config_t const *video_config, audio_renderer_config_t const *audio_config) {
+    if (video_init_func == NULL) {
+        video_init_func =
+#if defined(HAS_ANDROID_RENDERER)
+            find_video_init_func("android");
+#else
+            find_video_init_func("dummy");
+#endif
+    }
+    if (audio_init_func == NULL) {
+        audio_init_func = find_audio_init_func("dummy");
+    }
+
     raop_callbacks_t raop_cbs;
     memset(&raop_cbs, 0, sizeof(raop_cbs));
     raop_cbs.conn_init = conn_init;

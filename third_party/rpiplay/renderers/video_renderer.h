@@ -43,6 +43,7 @@ typedef enum background_mode_e {
 
 typedef enum video_renderer_type_e {
     VIDEO_RENDERER_DUMMY,
+    VIDEO_RENDERER_ANDROID,
     VIDEO_RENDERER_RPI,
     VIDEO_RENDERER_GSTREAMER
 } video_renderer_type_t;
@@ -86,6 +87,7 @@ typedef struct video_renderer_s {
 } video_renderer_t;
 
 video_renderer_t *video_renderer_dummy_init(logger_t *logger, video_renderer_config_t const *config);
+video_renderer_t *video_renderer_android_init(logger_t *logger, video_renderer_config_t const *config);
 video_renderer_t *video_renderer_rpi_init(logger_t *logger, video_renderer_config_t const *config);
 video_renderer_t *video_renderer_gstreamer_init(logger_t *logger, video_renderer_config_t const *config);
 
