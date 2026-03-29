@@ -1,5 +1,7 @@
 package com.mirrornode.app
 
+import android.view.Surface
+
 object ReceiverNativeBridge {
     init {
         System.loadLibrary("mirrornode_receiver")
@@ -11,6 +13,8 @@ object ReceiverNativeBridge {
         airPlayPort: Int,
         raopPort: Int,
     ): Boolean
+
+    external fun setVideoSurface(surface: Surface?)
 
     external fun stopReceiver()
 }

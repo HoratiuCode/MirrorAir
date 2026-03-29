@@ -1,48 +1,37 @@
-# MirrorNode
+# MirrorAir
 
-MirrorNode is a minimal Android Studio project scaffold for a black-screen AirPlay-like receiver UI backed by a foreground service, multicast support, and DNS-SD advertisement for `_airplay._tcp` and `_raop._tcp`.
+MirrorAir is an Android receiver project intended to let a Mac discover an Android tablet or phone as an AirPlay-style mirroring target.
 
-## What is implemented
+## What exists now
 
-- `MainActivity` with a black background, centered receiver name, connection state text, and `Start Receiver` / `Stop Receiver` buttons.
-- Automatic receiver startup when the app launches.
-- `ReceiverService` foreground service with notification channel, multicast lock, and sticky restart behavior.
-- `receiver.properties` config copied to the app files directory on first launch and used to customize the receiver name.
-- Bonjour-style local network advertisement through `NsdManager`.
-- Native bridge wiring through CMake and JNI so an open-source AirPlay-compatible engine can be hosted in-process.
+- Minimal Android UI with a fullscreen render surface, centered receiver name, connection status, and `Start Receiver` / `Stop Receiver`.
+- Foreground `ReceiverService` with multicast lock and DNS-SD advertisement for `_airplay._tcp` and `_raop._tcp`.
+- Config-driven receiver name from `app/src/main/assets/receiver.properties`.
+- Vendored upstream `RPiPlay` code in `vendor/RPiPlay`.
+- Static download website in `docs/` for GitHub Pages or any static host.
 
-## Critical limitation
+## What is still missing
 
-This scaffold does **not** yet contain a real AirPlay mirroring engine. The bundled native layer is a placeholder loop so the Android project structure is buildable and the service lifecycle works.
+Mac mirroring is **not fully working yet**.
 
-To make Mac screen mirroring actually work, you need to port and link a real receiver core such as:
+The hard part is the native Android port:
 
-- `RPiPlay` for AirPlay mirroring support
-- `openairplay` if you want to build against older AirPlay receiver code
-- another Android-portable AirPlay-compatible implementation with mirroring support
+- `RPiPlay` currently targets Raspberry Pi and desktop Linux.
+- Its renderers rely on Linux and Raspberry Pi stacks, not Android `MediaCodec`, `AudioTrack`, or `Surface`.
+- The JNI bridge in `app/src/main/cpp/openairplay_bridge.cpp` is still a placeholder shell around the Android surface lifecycle.
 
-That porting step is non-trivial because those projects are typically Linux or Raspberry Pi oriented and depend on platform-specific audio, video, crypto, and event-loop components that need Android NDK replacements.
+So the repo is now structured for the real port, but it still needs native protocol, decode, and render adaptation before a Mac can actually mirror its screen onto Android.
 
-## Integration point
+## Website
 
-Replace the placeholder implementation in:
+The static website lives in `docs/`.
 
-- `app/src/main/cpp/openairplay_bridge.cpp`
+- `docs/index.html`
+- `docs/styles.css`
+- `docs/app.js`
 
-Then extend:
+This can be published with GitHub Pages and used as the download page for the APK once you build one and place it in `docs/downloads/`.
 
-- `app/src/main/cpp/CMakeLists.txt`
+## Download assets
 
-to compile the chosen receiver engine and its dependencies.
-
-## Config path on device
-
-On first launch, the asset file is copied to:
-
-- `Context.filesDir/receiver.properties`
-
-Keys:
-
-- `receiver.name`
-- `airplay.port`
-- `raop.port`
+Use `scripts/prepare-downloads.sh` after generating an APK in Android Studio. It copies the APK into `docs/downloads/` so the website can serve it directly.

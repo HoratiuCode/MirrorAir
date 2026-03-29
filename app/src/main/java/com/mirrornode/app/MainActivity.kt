@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.SurfaceHolder
+import android.view.SurfaceView
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
@@ -23,8 +25,10 @@ class MainActivity : ComponentActivity() {
         val statusView = findViewById<TextView>(R.id.statusText)
         val startButton = findViewById<Button>(R.id.startButton)
         val stopButton = findViewById<Button>(R.id.stopButton)
+        val videoSurface = findViewById<SurfaceView>(R.id.videoSurface)
 
         ensureNotificationPermission()
+        bindRenderSurface(videoSurface.holder)
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -46,6 +50,29 @@ class MainActivity : ComponentActivity() {
         }
 
         ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+    }
+
+    private fun bindRenderSurface(holder: SurfaceHolder) {
+        holder.addCallback(
+            object : SurfaceHolder.Callback {
+                override fun surfaceCreated(holder: SurfaceHolder) {
+                    ReceiverNativeBridge.setVideoSurface(holder.surface)
+                }
+
+                override fun surfaceChanged(
+                    holder: SurfaceHolder,
+                    format: Int,
+                    width: Int,
+                    height: Int,
+                ) {
+                    ReceiverNativeBridge.setVideoSurface(holder.surface)
+                }
+
+                override fun surfaceDestroyed(holder: SurfaceHolder) {
+                    ReceiverNativeBridge.setVideoSurface(null)
+                }
+            },
+        )
     }
 
     private fun ensureNotificationPermission() {

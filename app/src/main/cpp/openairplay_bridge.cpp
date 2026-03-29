@@ -1,4 +1,5 @@
 #include <android/log.h>
+#include <android/native_window_jni.h>
 #include <atomic>
 #include <chrono>
 #include <jni.h>
@@ -12,6 +13,7 @@ constexpr const char* kTag = "MirrorNodeNative";
 std::atomic<bool> g_running(false);
 std::jthread g_receiverThread;
 std::mutex g_mutex;
+ANativeWindow* g_window = nullptr;
 
 void receiverLoop(std::string receiver_name, std::string config_path, int airplay_port, int raop_port) {
   __android_log_print(
@@ -67,6 +69,22 @@ Java_com_mirrornode_app_ReceiverNativeBridge_startReceiver(
 }
 
 extern "C" JNIEXPORT void JNICALL
+Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface(
+    JNIEnv* env,
+    jobject /* this */,
+    jobject surface) {
+  std::scoped_lock lock(g_mutex);
+  if (g_window != nullptr) {
+    ANativeWindow_release(g_window);
+    g_window = nullptr;
+  }
+
+  if (surface != nullptr) {
+    g_window = ANativeWindow_fromSurface(env, surface);
+  }
+}
+
+extern "C" JNIEXPORT void JNICALL
 Java_com_mirrornode_app_ReceiverNativeBridge_stopReceiver(
     JNIEnv* /* env */,
     jobject /* this */) {
@@ -78,5 +96,9 @@ Java_com_mirrornode_app_ReceiverNativeBridge_stopReceiver(
   g_running.store(false);
   if (g_receiverThread.joinable()) {
     g_receiverThread.join();
+  }
+  if (g_window != nullptr) {
+    ANativeWindow_release(g_window);
+    g_window = nullptr;
   }
 }
