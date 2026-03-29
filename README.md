@@ -41,3 +41,16 @@ This can be published with GitHub Pages and used as the download page for the AP
 ## Download assets
 
 Use `scripts/prepare-downloads.sh` after generating an APK in Android Studio. It copies the APK into both `downloads/` and `docs/downloads/`.
+
+## Android To Mac
+
+If you want the reverse direction right now, use:
+
+- `scripts/mirror-android-to-mac.sh`
+- `mirror-to-mac.json`
+
+This launches `scrcpy` on macOS to mirror an Android device to your Mac. It requires:
+
+- `scrcpy`
+- `adb`
+- USB debugging enabled on the Android device

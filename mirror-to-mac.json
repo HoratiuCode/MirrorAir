@@ -1,0 +1,10 @@
+{
+  "tool": "scrcpy",
+  "window_title": "MirrorAir Android Mirror",
+  "max_size": 1600,
+  "bit_rate": "8M",
+  "max_fps": 60,
+  "audio": false,
+  "stay_awake": true,
+  "turn_screen_off": false
+}
