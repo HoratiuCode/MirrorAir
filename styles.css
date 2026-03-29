@@ -35,6 +35,14 @@ body {
 .hero {
   padding: 3rem;
   border-radius: 1rem;
+  text-align: center;
+}
+
+.hero-image {
+  display: block;
+  width: min(12rem, 40vw);
+  height: auto;
+  margin: 0 auto 1.5rem;
 }
 
 .eyebrow {
@@ -57,6 +65,8 @@ h1 {
   font-size: clamp(2.6rem, 8vw, 5.8rem);
   line-height: 0.95;
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lede,
@@ -68,11 +78,19 @@ h1 {
   font-size: 1.02rem;
 }
 
+.lede,
+.note {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 2rem 0 1rem;
+  justify-content: center;
 }
 
 .button {
