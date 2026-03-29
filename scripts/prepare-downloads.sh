@@ -11,6 +11,10 @@ mkdir -p "${ROOT_DOWNLOAD_DIR}"
 find "${ROOT_DIR}/app/build/outputs/apk" -type f \( -name "*.apk" -o -name "*.aab" \) -print0 | while IFS= read -r -d '' file; do
   cp "${file}" "${DOWNLOAD_DIR}/"
   cp "${file}" "${ROOT_DOWNLOAD_DIR}/"
+  if [[ "${file}" == *.apk ]]; then
+    cp "${file}" "${DOWNLOAD_DIR}/MirrorAir-1.0.1.apk"
+    cp "${file}" "${ROOT_DOWNLOAD_DIR}/MirrorAir-1.0.1.apk"
+  fi
 done
 
 printf 'Copied Android build outputs into %s and %s\n' "${DOWNLOAD_DIR}" "${ROOT_DOWNLOAD_DIR}"
