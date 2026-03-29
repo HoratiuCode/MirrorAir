@@ -1,12 +1,12 @@
 const apkStatus = document.getElementById("apk-status");
 const downloadButton = document.getElementById("downloadButton");
 
-fetch("/downloads/MirrorNode.apk", { method: "HEAD" })
+fetch("/downloads/MirrorAir.apk", { method: "HEAD" })
   .then((response) => {
     if (response.ok) {
       apkStatus.textContent = "APK status: ready for download.";
       downloadButton.textContent = "Download APK";
-      downloadButton.href = "/downloads/MirrorNode.apk";
+      downloadButton.href = "/downloads/MirrorAir.apk";
       downloadButton.removeAttribute("aria-disabled");
       downloadButton.classList.remove("button-disabled");
       return;
