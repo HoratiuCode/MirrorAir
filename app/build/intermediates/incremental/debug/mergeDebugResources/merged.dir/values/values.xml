@@ -1145,6 +1145,11 @@
     <color name="material_personalized_color_text_primary_inverse_disable_only">#FFFFFF</color>
     <color name="material_personalized_color_text_secondary_and_tertiary_inverse">#FFFFFF</color>
     <color name="material_personalized_color_text_secondary_and_tertiary_inverse_disabled">#FFFFFF</color>
+    <color name="mirrorair_background">#FFFFFF</color>
+    <color name="mirrorair_border">#111111</color>
+    <color name="mirrorair_muted">#525252</color>
+    <color name="mirrorair_surface">#F5F5F2</color>
+    <color name="mirrorair_text">#111111</color>
     <color name="mtrl_btn_text_color_disabled">#61000000</color>
     <color name="mtrl_btn_transparent_bg_color">#00ffffff</color>
     <color name="mtrl_scrim_color">#52000000</color>
@@ -7554,12 +7559,12 @@
     <item name="windowNoTitle">true</item>
   </style>
     <style name="Theme.MirrorNode" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@android:color/black</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorOnPrimary">@android:color/black</item>
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:windowLightStatusBar" ns1:targetApi="23">false</item>
+        <item name="android:statusBarColor">@color/mirrorair_background</item>
+        <item name="android:navigationBarColor">@color/mirrorair_background</item>
+        <item name="colorPrimary">@color/mirrorair_text</item>
+        <item name="colorOnPrimary">@color/mirrorair_background</item>
+        <item name="android:windowBackground">@color/mirrorair_background</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="23">true</item>
     </style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>

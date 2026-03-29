@@ -27,9 +27,9 @@ class ReceiverService : Service() {
         currentConfig = ReceiverConfig.load(this)
         createNotificationChannel()
         updateState(
-            status = "Ready to receive",
+            status = "Receiver idle",
             running = false,
-            detail = "On your Mac, open Screen Mirroring and choose ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
+            detail = "Press Start Receiver to advertise ${currentConfig.receiverName} on Wi-Fi.",
         )
     }
 
@@ -66,9 +66,9 @@ class ReceiverService : Service() {
 
         if (isRunning) {
             updateState(
-                status = "Waiting for connection...",
+                status = "Receiver advertised on Wi-Fi",
                 running = true,
-                detail = "Project from your Mac to ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
+                detail = "The app is visible on the network, but Mac mirroring is not fully active in this build yet.",
             )
             return
         }
@@ -99,9 +99,9 @@ class ReceiverService : Service() {
                 config = currentConfig,
                 onRegistered = {
                     updateState(
-                        status = "Receiver ready on Wi-Fi",
+                        status = "Receiver advertised on Wi-Fi",
                         running = true,
-                        detail = "On your Mac, open Screen Mirroring and choose ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
+                        detail = "The app is advertising ${currentConfig.receiverName}, but the full Mac mirroring engine is still being integrated.",
                     )
                 },
                 onFailure = { reason ->
@@ -117,7 +117,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Starting network receiver...",
                 running = true,
-                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi. Verify code ${currentConfig.receiverCode} from your Mac.",
+                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi. This build is discovery-only until the AirPlay engine is integrated.",
             )
         } else {
             shutdownReceiver()
@@ -214,9 +214,9 @@ class ReceiverService : Service() {
             ReceiverState(
                 receiverName = "MirrorAir",
                 receiverCode = "0000",
-                statusText = "Ready to receive",
+                statusText = "Receiver idle",
                 running = false,
-                detailText = "On your Mac, open Screen Mirroring and choose MirrorAir. Verify code 0000.",
+                detailText = "Press Start Receiver to advertise MirrorAir on Wi-Fi.",
             ),
         )
 

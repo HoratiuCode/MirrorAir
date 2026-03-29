@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-44:12
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:1:1-45:12
 MERGED from [com.google.android.material:material:1.13.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/76599fe2771d38776be0caceb9ac2fa8/transformed/material-1.13.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/31290026491ba3ee32c7404e44f1f984/transformed/appcompat-resources-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/e821cc9334b2576e7c082f6f3e222386/transformed/constraintlayout-2.1.0/AndroidManifest.xml:2:1-11:12
@@ -104,8 +104,8 @@ ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/And
 	android:name
 		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:16:9-62
 application
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:20:5-42:19
-INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:20:5-42:19
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:20:5-43:19
+INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:20:5-43:19
 MERGED from [com.google.android.material:material:1.13.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/76599fe2771d38776be0caceb9ac2fa8/transformed/material-1.13.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/76599fe2771d38776be0caceb9ac2fa8/transformed/material-1.13.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/e821cc9334b2576e7c082f6f3e222386/transformed/constraintlayout-2.1.0/AndroidManifest.xml:9:5-20
@@ -127,43 +127,45 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/horatiubudai/.gradle
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:24:9-35
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:25:9-35
 	android:label
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:23:9-41
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:24:9-41
+	android:roundIcon
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:22:9-58
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:22:9-43
 	android:allowBackup
 		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:25:9-48
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:26:9-48
 activity#com.mirrornode.app.MainActivity
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:27:9-35:20
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:28:9-36:20
 	android:exported
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:29:13-36
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:30:13-36
 	android:theme
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:30:13-52
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:31:13-52
 	android:name
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:28:13-41
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:29:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:31:13-34:29
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:32:17-69
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:32:25-66
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:33:17-77
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:33:27-74
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:34:27-74
 service#com.mirrornode.app.ReceiverService
-ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:37:9-41:56
+ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:38:9-42:56
 	android:enabled
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:39:13-35
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:40:13-35
 	android:exported
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:40:13-37
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:41:13-37
 	android:foregroundServiceType
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:41:13-53
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:42:13-53
 	android:name
-		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:38:13-44
+		ADDED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml:39:13-44
 uses-sdk
 INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/AndroidManifest.xml

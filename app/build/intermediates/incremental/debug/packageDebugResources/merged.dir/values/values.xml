@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
     <color name="black">#000000</color>
+    <color name="mirrorair_background">#FFFFFF</color>
+    <color name="mirrorair_border">#111111</color>
+    <color name="mirrorair_muted">#525252</color>
+    <color name="mirrorair_surface">#F5F5F2</color>
+    <color name="mirrorair_text">#111111</color>
     <string name="app_name">MirrorAir</string>
     <string name="default_detail">On your Mac, open Screen Mirroring and choose MirrorAir. Verify code 0000.</string>
     <string name="default_receiver_code">Code 0000</string>
@@ -10,11 +15,11 @@
     <string name="start_receiver">Start Receiver</string>
     <string name="stop_receiver">Stop Receiver</string>
     <style name="Theme.MirrorNode" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@android:color/black</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorOnPrimary">@android:color/black</item>
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:windowLightStatusBar" ns1:targetApi="23">false</item>
+        <item name="android:statusBarColor">@color/mirrorair_background</item>
+        <item name="android:navigationBarColor">@color/mirrorair_background</item>
+        <item name="colorPrimary">@color/mirrorair_text</item>
+        <item name="colorOnPrimary">@color/mirrorair_background</item>
+        <item name="android:windowBackground">@color/mirrorair_background</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="23">true</item>
     </style>
 </resources>

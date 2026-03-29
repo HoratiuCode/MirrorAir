@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black">
+    android:background="@color/mirrorair_background">
 
     <SurfaceView
         android:id="@+id/videoSurface"
@@ -14,10 +14,18 @@
         android:id="@+id/overlayPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#33000000"
+        android:background="@color/mirrorair_background"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/appIconPreview"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="22dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/receiverNameText"
@@ -25,7 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/default_receiver_name"
-            android:textColor="@android:color/white"
+            android:textColor="@color/mirrorair_text"
             android:textSize="34sp"
             android:textStyle="bold" />
 
@@ -36,7 +44,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/default_receiver_code"
-            android:textColor="#E6FFFFFF"
+            android:textColor="@color/mirrorair_text"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -47,7 +55,7 @@
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/default_status"
-            android:textColor="#B3FFFFFF"
+            android:textColor="@color/mirrorair_muted"
             android:textSize="18sp" />
 
         <TextView
@@ -58,7 +66,7 @@
             android:gravity="center"
             android:maxWidth="300dp"
             android:text="@string/default_detail"
-            android:textColor="#80FFFFFF"
+            android:textColor="@color/mirrorair_muted"
             android:textSize="14sp" />
 
         <Button
@@ -66,6 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:backgroundTint="@color/mirrorair_text"
+            android:textColor="@color/mirrorair_background"
             android:text="@string/start_receiver" />
 
         <Button
@@ -73,6 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:backgroundTint="@color/mirrorair_surface"
+            android:textColor="@color/mirrorair_text"
             android:text="@string/stop_receiver" />
     </LinearLayout>
 

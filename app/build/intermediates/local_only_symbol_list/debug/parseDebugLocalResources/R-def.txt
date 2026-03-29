@@ -1,6 +1,14 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color mirrorair_background
+color mirrorair_border
+color mirrorair_muted
+color mirrorair_surface
+color mirrorair_text
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id appIconPreview
 id detailText
 id overlayPanel
 id receiverCodeText
@@ -10,6 +18,8 @@ id statusText
 id stopButton
 id videoSurface
 layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
 string app_name
 string default_detail
 string default_receiver_code
