@@ -30,6 +30,8 @@ The static website lives in `docs/`.
 - `docs/styles.css`
 - `docs/app.js`
 
+For Vercel, the repo now includes `vercel.json` so the site is served from `docs/` at the domain root.
+
 This can be published with GitHub Pages and used as the download page for the APK once you build one and place it in `docs/downloads/`.
 
 ## Download assets
