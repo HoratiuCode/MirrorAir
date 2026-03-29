@@ -75,7 +75,6 @@ class ReceiverService : Service() {
 
         val started = runCatching {
             acquireMulticastLock()
-            discoveryManager.register(currentConfig)
             ReceiverNativeBridge.startReceiver(
                 receiverName = currentConfig.receiverName,
                 configPath = ReceiverConfig.configFile(this).absolutePath,
@@ -96,10 +95,29 @@ class ReceiverService : Service() {
 
         isRunning = started
         if (started) {
+            discoveryManager.register(
+                config = currentConfig,
+                onRegistered = {
+                    updateState(
+                        status = "Receiver ready on Wi-Fi",
+                        running = true,
+                        detail = "On your Mac, open Screen Mirroring and choose ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
+                    )
+                },
+                onFailure = { reason ->
+                    shutdownReceiver()
+                    updateState(
+                        status = "Receiver network error",
+                        running = false,
+                        detail = reason,
+                    )
+                    stopSelf()
+                },
+            )
             updateState(
-                status = "Waiting for connection...",
+                status = "Starting network receiver...",
                 running = true,
-                detail = "Project from your Mac to ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
+                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi. Verify code ${currentConfig.receiverCode} from your Mac.",
             )
         } else {
             shutdownReceiver()

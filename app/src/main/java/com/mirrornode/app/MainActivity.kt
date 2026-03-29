@@ -11,16 +11,22 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+
+    private val permissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            startReceiverIfPermissionsGranted()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +41,8 @@ class MainActivity : ComponentActivity() {
         val stopButton = findViewById<Button>(R.id.stopButton)
         val videoSurface = findViewById<SurfaceView>(R.id.videoSurface)
 
-        ensureNotificationPermission()
         bindRenderSurface(videoSurface.holder)
+        ensureRuntimePermissions()
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -53,14 +59,14 @@ class MainActivity : ComponentActivity() {
         }
 
         startButton.setOnClickListener {
-            ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+            startReceiverIfPermissionsGranted()
         }
 
         stopButton.setOnClickListener {
             startService(ReceiverService.stopIntent(this))
         }
 
-        ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+        startReceiverIfPermissionsGranted()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -106,19 +112,33 @@ class MainActivity : ComponentActivity() {
         )
     }
 
-    private fun ensureNotificationPermission() {
+    private fun ensureRuntimePermissions() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             return
         }
 
-        if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+        val missingPermissions = buildList {
+            if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                add(Manifest.permission.POST_NOTIFICATIONS)
+            }
+            if (checkSelfPermission(Manifest.permission.NEARBY_WIFI_DEVICES) != PackageManager.PERMISSION_GRANTED) {
+                add(Manifest.permission.NEARBY_WIFI_DEVICES)
+            }
+        }
+
+        if (missingPermissions.isNotEmpty()) {
+            permissionLauncher.launch(missingPermissions.toTypedArray())
+        }
+    }
+
+    private fun startReceiverIfPermissionsGranted() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+            checkSelfPermission(Manifest.permission.NEARBY_WIFI_DEVICES) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ensureRuntimePermissions()
             return
         }
 
-        requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), NOTIFICATION_REQUEST_CODE)
-    }
-
-    companion object {
-        private const val NOTIFICATION_REQUEST_CODE = 2001
+        ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
     }
 }

@@ -13,8 +13,34 @@ class AirPlayDiscoveryManager(
     private var airPlayRegistration: NsdManager.RegistrationListener? = null
     private var raopRegistration: NsdManager.RegistrationListener? = null
 
-    fun register(config: ReceiverConfig) {
+    fun register(
+        config: ReceiverConfig,
+        onRegistered: () -> Unit = {},
+        onFailure: (String) -> Unit = {},
+    ) {
         unregister()
+
+        var registeredCount = 0
+        var failed = false
+
+        fun handleRegistered() {
+            if (failed) {
+                return
+            }
+            registeredCount += 1
+            if (registeredCount == 2) {
+                onRegistered()
+            }
+        }
+
+        fun handleFailure(serviceLabel: String, errorCode: Int) {
+            if (failed) {
+                return
+            }
+            failed = true
+            unregister()
+            onFailure("$serviceLabel registration failed (error $errorCode).")
+        }
 
         val deviceId = deviceIdentifier()
         val airPlayInfo = NsdServiceInfo().apply {
@@ -45,8 +71,16 @@ class AirPlayDiscoveryManager(
             setAttribute("txtvers", "1")
         }
 
-        airPlayRegistration = registrationListener()
-        raopRegistration = registrationListener()
+        airPlayRegistration = registrationListener(
+            serviceLabel = "AirPlay",
+            onRegistered = ::handleRegistered,
+            onFailure = ::handleFailure,
+        )
+        raopRegistration = registrationListener(
+            serviceLabel = "RAOP",
+            onRegistered = ::handleRegistered,
+            onFailure = ::handleFailure,
+        )
         nsdManager.registerService(airPlayInfo, NsdManager.PROTOCOL_DNS_SD, airPlayRegistration)
         nsdManager.registerService(raopInfo, NsdManager.PROTOCOL_DNS_SD, raopRegistration)
     }
@@ -64,10 +98,16 @@ class AirPlayDiscoveryManager(
         raopRegistration = null
     }
 
-    private fun registrationListener(): NsdManager.RegistrationListener {
+    private fun registrationListener(
+        serviceLabel: String,
+        onRegistered: () -> Unit,
+        onFailure: (String, Int) -> Unit,
+    ): NsdManager.RegistrationListener {
         return object : NsdManager.RegistrationListener {
-            override fun onServiceRegistered(serviceInfo: NsdServiceInfo) = Unit
-            override fun onRegistrationFailed(serviceInfo: NsdServiceInfo, errorCode: Int) = Unit
+            override fun onServiceRegistered(serviceInfo: NsdServiceInfo) = onRegistered()
+            override fun onRegistrationFailed(serviceInfo: NsdServiceInfo, errorCode: Int) {
+                onFailure(serviceLabel, errorCode)
+            }
             override fun onServiceUnregistered(serviceInfo: NsdServiceInfo) = Unit
             override fun onUnregistrationFailed(serviceInfo: NsdServiceInfo, errorCode: Int) = Unit
         }
