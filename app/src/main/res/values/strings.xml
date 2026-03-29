@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MirrorNode</string>
+    <string name="default_receiver_name">MirrorNode</string>
+    <string name="default_status">Waiting for connection...</string>
+    <string name="start_receiver">Start Receiver</string>
+    <string name="stop_receiver">Stop Receiver</string>
+</resources>
