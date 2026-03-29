@@ -1,3 +1,5 @@
 # ninja log v5
 0	1634	1774797105561448263	CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o	2a9997b8b76baf2e
 1637	1797	1774797105728825625	/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/armeabi-v7a/libmirrornode_receiver.so	76d377db0c45ea8b
+4	829	1774799677605994466	CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o	2a9997b8b76baf2e
+829	908	1774799677688420917	/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/1u261v93/obj/armeabi-v7a/libmirrornode_receiver.so	76d377db0c45ea8b

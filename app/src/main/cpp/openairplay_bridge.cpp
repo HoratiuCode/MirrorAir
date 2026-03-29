@@ -1,8 +1,11 @@
 #include <android/log.h>
+#include <android/native_window.h>
 #include <android/native_window_jni.h>
 #include <atomic>
 #include <chrono>
 #include <jni.h>
+#include <cstdint>
+#include <cstring>
 #include <mutex>
 #include <string>
 #include <thread>
@@ -15,17 +18,73 @@ std::thread g_receiverThread;
 std::mutex g_mutex;
 ANativeWindow* g_window = nullptr;
 
+void drawReceiverFrameLocked() {
+  if (g_window == nullptr) {
+    return;
+  }
+
+  ANativeWindow_setBuffersGeometry(g_window, 0, 0, WINDOW_FORMAT_RGBA_8888);
+
+  ANativeWindow_Buffer buffer;
+  if (ANativeWindow_lock(g_window, &buffer, nullptr) != 0) {
+    __android_log_print(ANDROID_LOG_WARN, kTag, "Could not lock native window");
+    return;
+  }
+
+  auto* pixels = static_cast<std::uint32_t*>(buffer.bits);
+  if (pixels == nullptr) {
+    ANativeWindow_unlockAndPost(g_window);
+    return;
+  }
+
+  const int width = buffer.width;
+  const int height = buffer.height;
+  const int stride = buffer.stride;
+  const std::uint32_t background = 0xFF000000u;
+  const std::uint32_t foreground = 0xFFFFFFFFu;
+
+  for (int y = 0; y < height; ++y) {
+    std::uint32_t* row = pixels + (y * stride);
+    for (int x = 0; x < width; ++x) {
+      row[x] = background;
+    }
+  }
+
+  const int border = width > 600 ? 8 : 4;
+  const int panelWidth = width * 3 / 5;
+  const int panelHeight = height / 4;
+  const int left = (width - panelWidth) / 2;
+  const int top = (height - panelHeight) / 2;
+  const int right = left + panelWidth;
+  const int bottom = top + panelHeight;
+
+  for (int y = top; y < bottom; ++y) {
+    std::uint32_t* row = pixels + (y * stride);
+    for (int x = left; x < right; ++x) {
+      const bool onBorder =
+          x < left + border || x >= right - border || y < top + border || y >= bottom - border;
+      row[x] = onBorder ? foreground : background;
+    }
+  }
+
+  ANativeWindow_unlockAndPost(g_window);
+}
+
 void receiverLoop(std::string receiver_name, std::string config_path, int airplay_port, int raop_port) {
   __android_log_print(
       ANDROID_LOG_INFO,
       kTag,
-      "MirrorNode native receiver placeholder running. name=%s config=%s airplay=%d raop=%d",
+      "MirrorAir native receiver placeholder running. name=%s config=%s airplay=%d raop=%d",
       receiver_name.c_str(),
       config_path.c_str(),
       airplay_port,
       raop_port);
 
   while (g_running.load()) {
+    {
+      std::scoped_lock lock(g_mutex);
+      drawReceiverFrameLocked();
+    }
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 }
@@ -81,6 +140,7 @@ Java_com_mirrornode_app_ReceiverNativeBridge_setVideoSurface(
 
   if (surface != nullptr) {
     g_window = ANativeWindow_fromSurface(env, surface);
+    drawReceiverFrameLocked();
   }
 }
 
@@ -98,6 +158,7 @@ Java_com_mirrornode_app_ReceiverNativeBridge_stopReceiver(
     g_receiverThread.join();
   }
   if (g_window != nullptr) {
+    drawReceiverFrameLocked();
     ANativeWindow_release(g_window);
     g_window = nullptr;
   }
