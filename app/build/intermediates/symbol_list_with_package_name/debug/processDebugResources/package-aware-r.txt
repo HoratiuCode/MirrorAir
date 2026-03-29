@@ -4005,6 +4005,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id receiverCodeText
 id receiverNameText
 id rectangles
 id report_drawn
@@ -4406,6 +4407,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
 string default_detail
+string default_receiver_code
 string default_receiver_name
 string default_status
 string error_a11y_label
@@ -4528,6 +4530,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string receiver_code_value
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

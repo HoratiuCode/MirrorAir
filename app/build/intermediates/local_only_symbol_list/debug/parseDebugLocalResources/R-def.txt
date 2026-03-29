@@ -3,6 +3,7 @@ local
 color black
 id detailText
 id overlayPanel
+id receiverCodeText
 id receiverNameText
 id startButton
 id statusText
@@ -11,8 +12,10 @@ id videoSurface
 layout activity_main
 string app_name
 string default_detail
+string default_receiver_code
 string default_receiver_name
 string default_status
+string receiver_code_value
 string start_receiver
 string stop_receiver
 style Theme.MirrorNode

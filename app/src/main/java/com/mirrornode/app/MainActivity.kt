@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         val receiverNameView = findViewById<TextView>(R.id.receiverNameText)
+        val receiverCodeView = findViewById<TextView>(R.id.receiverCodeText)
         val statusView = findViewById<TextView>(R.id.statusText)
         val detailView = findViewById<TextView>(R.id.detailText)
         val startButton = findViewById<Button>(R.id.startButton)
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 ReceiverService.states().collect { state ->
                     receiverNameView.text = state.receiverName
+                    receiverCodeView.text = getString(R.string.receiver_code_value, state.receiverCode)
                     statusView.text = state.statusText
                     detailView.text = state.detailText
                     startButton.isEnabled = !state.running
@@ -57,6 +59,8 @@ class MainActivity : ComponentActivity() {
         stopButton.setOnClickListener {
             startService(ReceiverService.stopIntent(this))
         }
+
+        ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

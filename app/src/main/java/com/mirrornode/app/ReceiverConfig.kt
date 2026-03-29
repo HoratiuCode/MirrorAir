@@ -3,9 +3,11 @@ package com.mirrornode.app
 import android.content.Context
 import java.io.File
 import java.util.Properties
+import kotlin.random.Random
 
 data class ReceiverConfig(
     val receiverName: String,
+    val receiverCode: String,
     val airPlayPort: Int,
     val raopPort: Int,
 ) {
@@ -20,9 +22,12 @@ data class ReceiverConfig(
             val properties = Properties().apply {
                 configFile.inputStream().use(::load)
             }
+            val receiverCode = properties.getProperty("receiver.code")?.takeIf { it.isNotBlank() }
+                ?: generateAndPersistCode(configFile, properties)
 
             return ReceiverConfig(
                 receiverName = properties.getProperty("receiver.name", DEFAULT_NAME),
+                receiverCode = receiverCode,
                 airPlayPort = properties.getProperty("airplay.port", DEFAULT_AIRPLAY_PORT.toString()).toInt(),
                 raopPort = properties.getProperty("raop.port", DEFAULT_RAOP_PORT.toString()).toInt(),
             )
@@ -40,6 +45,15 @@ data class ReceiverConfig(
                 }
             }
             return destination
+        }
+
+        private fun generateAndPersistCode(configFile: File, properties: Properties): String {
+            val code = (1000 + Random.nextInt(9000)).toString()
+            properties.setProperty("receiver.code", code)
+            configFile.outputStream().use { output ->
+                properties.store(output, "MirrorAir receiver settings")
+            }
+            return code
         }
     }
 }

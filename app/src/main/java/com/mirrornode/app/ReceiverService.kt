@@ -29,7 +29,7 @@ class ReceiverService : Service() {
         updateState(
             status = "Ready to receive",
             running = false,
-            detail = "Open Screen Mirroring on your Mac and choose ${currentConfig.receiverName}.",
+            detail = "On your Mac, open Screen Mirroring and choose ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
         )
     }
 
@@ -68,7 +68,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Waiting for connection...",
                 running = true,
-                detail = "Your Mac should discover ${currentConfig.receiverName} on the same Wi-Fi network.",
+                detail = "Project from your Mac to ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
             )
             return
         }
@@ -99,7 +99,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Waiting for connection...",
                 running = true,
-                detail = "Your Mac should discover ${currentConfig.receiverName} on the same Wi-Fi network.",
+                detail = "Project from your Mac to ${currentConfig.receiverName}. Verify code ${currentConfig.receiverCode}.",
             )
         } else {
             shutdownReceiver()
@@ -172,6 +172,7 @@ class ReceiverService : Service() {
     private fun updateState(status: String, running: Boolean, detail: String) {
         stateFlow.value = ReceiverState(
             receiverName = currentConfig.receiverName,
+            receiverCode = currentConfig.receiverCode,
             statusText = status,
             running = running,
             detailText = detail,
@@ -194,9 +195,10 @@ class ReceiverService : Service() {
         private val stateFlow = MutableStateFlow(
             ReceiverState(
                 receiverName = "MirrorAir",
+                receiverCode = "0000",
                 statusText = "Ready to receive",
                 running = false,
-                detailText = "Open Screen Mirroring on your Mac and choose MirrorAir.",
+                detailText = "On your Mac, open Screen Mirroring and choose MirrorAir. Verify code 0000.",
             ),
         )
 
