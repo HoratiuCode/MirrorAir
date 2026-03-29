@@ -299,7 +299,7 @@ ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
-permission#com.mirrornode.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.mirrorair.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
@@ -309,7 +309,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
-uses-permission#com.mirrornode.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.mirrorair.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.17.0] /Users/horatiubudai/.gradle/caches/9.4.0/transforms/107173cc011339406c013d3a6038c428/transformed/core-1.17.0/AndroidManifest.xml:26:22-94

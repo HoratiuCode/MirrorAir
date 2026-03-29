@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mirrornode.app"
-    android:versionCode="1"
-    android:versionName="1.0.0" >
+    package="com.mirrorair.app"
+    android:versionCode="2"
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -24,10 +24,10 @@
         android:usesPermissionFlags="neverForLocation" />
 
     <permission
-        android:name="com.mirrornode.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.mirrorair.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.mirrornode.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.mirrorair.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -58,7 +58,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.mirrornode.app.androidx-startup"
+            android:authorities="com.mirrorair.app.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
