@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MirrorAir Install Guide</title>
+    <meta
+      name="description"
+      content="MirrorAir install guide, package troubleshooting, and direct adb install notes."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <a class="corner-book active" href="./guide.html" aria-label="Open install guide">
+        <span aria-hidden="true">📘</span>
+      </a>
+
+      <section class="hero guide-hero">
+        <p class="eyebrow">MirrorAir Guide</p>
+        <h1>Install and fix install problems.</h1>
+        <p class="lede">
+          Use this page if Android blocks the APK, stops the package installer, or says the app could not be installed.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="./downloads/MirrorAir-1.0.1.apk" download>Download APK</a>
+          <a class="button secondary" href="./index.html">Back Home</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>How To Install</h2>
+        <ol class="steps">
+          <li>Use an Android device running Android 6 or newer.</li>
+          <li>Tap <strong>Download APK</strong> and wait for <code>MirrorAir-1.0.1.apk</code> to finish downloading.</li>
+          <li>If Android blocks the file, allow <strong>Install unknown apps</strong> for your browser or the Files app.</li>
+          <li>Open the downloaded APK from the Android <strong>Files</strong> or <strong>Downloads</strong> app.</li>
+          <li>Install MirrorAir and then open it on the same Wi-Fi network as your Mac.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>If Install Fails</h2>
+        <ol class="steps">
+          <li>Delete every older <code>MirrorAir.apk</code> or <code>MirrorAir-1.0.1.apk</code> file from Downloads before trying again.</li>
+          <li>Uninstall any older <code>MirrorAir</code> or <code>MirrorNode</code> app already installed on the device.</li>
+          <li>Download the APK again instead of reusing an older file from browser history.</li>
+          <li>If Android says <strong>There was a problem parsing the package</strong>, make sure the device is Android 6 or newer and the file finished downloading completely.</li>
+          <li>If Android says <strong>App not installed</strong>, try opening the APK from the Files app instead of the browser popup.</li>
+          <li>If the Android package installer keeps stopping, restart the phone once and try again from the Files app.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>Direct Install From Mac</h2>
+        <ol class="steps">
+          <li>Enable <strong>Developer options</strong> and <strong>USB debugging</strong> on the Android device.</li>
+          <li>Connect the phone or tablet to your Mac with USB and approve the computer on the device.</li>
+          <li>From the project folder, run <code>scripts/install-debug-apk.sh</code>.</li>
+          <li>This uses <code>adb install -r</code>, which bypasses the Android package installer popup path.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>After Install</h2>
+        <ol class="steps">
+          <li>Open MirrorAir on Android.</li>
+          <li>Press <strong>Start Receiver</strong>.</li>
+          <li>On your Mac, open Screen Mirroring or AirPlay and look for <strong>MirrorAir</strong>.</li>
+          <li>If the Mac sees the device but cannot connect, the app build is installed correctly and the remaining issue is receiver compatibility, not APK installation.</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
