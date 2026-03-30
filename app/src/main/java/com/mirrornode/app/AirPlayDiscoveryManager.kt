@@ -43,14 +43,15 @@ class AirPlayDiscoveryManager(
         }
 
         val deviceId = deviceIdentifier()
+        val profile = advertisementProfile(config.receiverMode)
         val airPlayInfo = NsdServiceInfo().apply {
-            serviceName = config.receiverName
+            serviceName = profile.serviceName(config.receiverName)
             serviceType = "_airplay._tcp."
             port = config.airPlayPort
             setAttribute("deviceid", deviceId)
-            setAttribute("features", AIRPLAY_FEATURES)
+            setAttribute("features", profile.features)
             setAttribute("flags", AIRPLAY_FLAGS)
-            setAttribute("model", AIRPLAY_MODEL)
+            setAttribute("model", profile.model)
             setAttribute("pk", AIRPLAY_PUBLIC_KEY)
             setAttribute("pi", AIRPLAY_PAIRING_ID)
             setAttribute("protovers", "1.1")
@@ -59,15 +60,15 @@ class AirPlayDiscoveryManager(
         }
 
         val raopInfo = NsdServiceInfo().apply {
-            serviceName = "$deviceId@${config.receiverName}"
+            serviceName = "$deviceId@${profile.serviceName(config.receiverName)}"
             serviceType = "_raop._tcp."
             port = config.raopPort
             setAttribute("ch", "2")
             setAttribute("cn", "0,1,2,3")
             setAttribute("da", "true")
             setAttribute("et", "0,3,5")
-            setAttribute("ft", AIRPLAY_FEATURES)
-            setAttribute("am", AIRPLAY_MODEL)
+            setAttribute("ft", profile.features)
+            setAttribute("am", profile.model)
             setAttribute("md", "0,1,2")
             setAttribute("pw", "false")
             setAttribute("rhd", "5.6.0.0")
@@ -144,14 +145,35 @@ class AirPlayDiscoveryManager(
         return networkAddress ?: fallback
     }
 
+    private fun advertisementProfile(mode: ReceiverMode): AdvertisementProfile {
+        return when (mode) {
+            ReceiverMode.AIRPLAY -> AdvertisementProfile(
+                model = "AppleTV2,1",
+                features = "0x5A7FFEE6",
+                serviceSuffix = "",
+            )
+            ReceiverMode.TV -> AdvertisementProfile(
+                model = "AppleTV3,2",
+                features = "0x5A7FFFF7,0x1E",
+                serviceSuffix = " TV",
+            )
+        }
+    }
+
     companion object {
-        private const val AIRPLAY_FEATURES = "0x5A7FFEE6"
         private const val AIRPLAY_FLAGS = "0x4"
-        private const val AIRPLAY_MODEL = "AppleTV2,1"
         private const val AIRPLAY_PROTOCOL_VERSION = "2"
         private const val AIRPLAY_SOURCE_VERSION = "220.68"
         private const val AIRPLAY_PUBLIC_KEY =
             "b07727d6f6cd6e08b58ede525ec3cdeaa252ad9f683feb212ef8a205246554e7"
         private const val AIRPLAY_PAIRING_ID = "2e388006-13ba-4041-9a67-25dd4a43d536"
+    }
+
+    private data class AdvertisementProfile(
+        val model: String,
+        val features: String,
+        val serviceSuffix: String,
+    ) {
+        fun serviceName(baseName: String): String = baseName + serviceSuffix
     }
 }

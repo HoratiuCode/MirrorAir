@@ -80,7 +80,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Receiver advertised on Wi-Fi",
                 running = true,
-                detail = "The app is visible as an AirPlay receiver on Wi-Fi and ready for connection attempts from your Mac.",
+                detail = "The app is visible in ${currentConfig.receiverMode.label()} mode and ready for connection attempts from your Mac.",
             )
             return
         }
@@ -113,7 +113,7 @@ class ReceiverService : Service() {
                     updateState(
                         status = "Receiver advertised on Wi-Fi",
                         running = true,
-                        detail = "Advertising ${currentConfig.receiverName} as an AirPlay-style TV target for your Mac on the local Wi-Fi network.",
+                        detail = "Advertising ${currentConfig.receiverName} in ${currentConfig.receiverMode.label()} mode on the local Wi-Fi network.",
                     )
                 },
                 onFailure = { reason ->
@@ -129,7 +129,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Starting network receiver...",
                 running = true,
-                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi and starting the native AirPlay receiver engine.",
+                detail = "Advertising ${currentConfig.receiverName} in ${currentConfig.receiverMode.label()} mode and starting the native receiver engine.",
             )
         } else {
             shutdownReceiver()
@@ -206,6 +206,7 @@ class ReceiverService : Service() {
             statusText = status,
             running = running,
             detailText = detail,
+            receiverMode = currentConfig.receiverMode,
         )
         if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
             val manager = getSystemService(NotificationManager::class.java)
@@ -229,6 +230,7 @@ class ReceiverService : Service() {
                 statusText = "Receiver shell ready",
                 running = false,
                 detailText = "Press Start Receiver to initialize the native receiver stack on this device.",
+                receiverMode = ReceiverMode.AIRPLAY,
             ),
         )
 
@@ -248,5 +250,12 @@ class ReceiverService : Service() {
         fun stopIntent(context: Context) = Intent(context, ReceiverService::class.java).apply {
             action = ACTION_STOP
         }
+    }
+}
+
+private fun ReceiverMode.label(): String {
+    return when (this) {
+        ReceiverMode.AIRPLAY -> "AirPlay"
+        ReceiverMode.TV -> "TV"
     }
 }

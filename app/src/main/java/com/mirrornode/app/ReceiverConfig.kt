@@ -10,12 +10,14 @@ data class ReceiverConfig(
     val receiverCode: String,
     val airPlayPort: Int,
     val raopPort: Int,
+    val receiverMode: ReceiverMode,
 ) {
     companion object {
         private const val CONFIG_FILE_NAME = "receiver.properties"
         private const val DEFAULT_NAME = "MirrorAir"
         private const val DEFAULT_AIRPLAY_PORT = 7000
         private const val DEFAULT_RAOP_PORT = 5000
+        private const val KEY_RECEIVER_MODE = "receiver.mode"
 
         fun load(context: Context): ReceiverConfig {
             val configFile = ensureConfigFile(context)
@@ -40,10 +42,22 @@ data class ReceiverConfig(
                 receiverCode = receiverCode,
                 airPlayPort = airPlayPort,
                 raopPort = raopPort,
+                receiverMode = ReceiverMode.fromStorageValue(properties.getProperty(KEY_RECEIVER_MODE)),
             )
         }
 
         fun configFile(context: Context): File = File(context.filesDir, CONFIG_FILE_NAME)
+
+        fun updateMode(context: Context, mode: ReceiverMode) {
+            val configFile = ensureConfigFile(context)
+            val properties = Properties().apply {
+                configFile.inputStream().use(::load)
+            }
+            properties.setProperty(KEY_RECEIVER_MODE, mode.storageValue)
+            configFile.outputStream().use { output ->
+                properties.store(output, "MirrorAir receiver settings")
+            }
+        }
 
         private fun ensureConfigFile(context: Context): File {
             val destination = configFile(context)

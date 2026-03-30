@@ -6,4 +6,5 @@ data class ReceiverState(
     val statusText: String,
     val running: Boolean,
     val detailText: String,
+    val receiverMode: ReceiverMode = ReceiverMode.AIRPLAY,
 )

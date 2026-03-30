@@ -5,6 +5,8 @@
     <string name="default_receiver_code">Code 0000</string>
     <string name="default_status">Receiver shell ready</string>
     <string name="default_detail">Press Start Receiver to initialize the native receiver stack on this device.</string>
+    <string name="mode_airplay">AirPlay</string>
+    <string name="mode_tv">TV Mode</string>
     <string name="start_receiver">Start Receiver</string>
     <string name="stop_receiver">Stop Receiver</string>
     <string name="receiver_code_value">Code %1$s</string>

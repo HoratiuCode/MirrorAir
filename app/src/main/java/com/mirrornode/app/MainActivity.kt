@@ -35,6 +35,8 @@ class MainActivity : ComponentActivity() {
         val receiverCodeView = findViewById<TextView>(R.id.receiverCodeText)
         val statusView = findViewById<TextView>(R.id.statusText)
         val detailView = findViewById<TextView>(R.id.detailText)
+        val airplayModeButton = findViewById<Button>(R.id.airplayModeButton)
+        val tvModeButton = findViewById<Button>(R.id.tvModeButton)
         val startButton = findViewById<Button>(R.id.startButton)
         val stopButton = findViewById<Button>(R.id.stopButton)
         val videoSurface = findViewById<SurfaceView>(R.id.videoSurface)
@@ -49,11 +51,30 @@ class MainActivity : ComponentActivity() {
                     receiverCodeView.text = getString(R.string.receiver_code_value, state.receiverCode)
                     statusView.text = state.statusText
                     detailView.text = state.detailText
+                    updateModeButtons(
+                        selectedMode = state.receiverMode,
+                        airplayModeButton = airplayModeButton,
+                        tvModeButton = tvModeButton,
+                    )
                     startButton.isEnabled = !state.running
                     stopButton.isEnabled = state.running
+                    airplayModeButton.isEnabled = !state.running
+                    tvModeButton.isEnabled = !state.running
                     detailView.visibility = if (state.detailText.isBlank()) View.GONE else View.VISIBLE
                 }
             }
+        }
+
+        airplayModeButton.setOnClickListener {
+            ReceiverConfig.updateMode(this, ReceiverMode.AIRPLAY)
+            updateModeButtons(ReceiverMode.AIRPLAY, airplayModeButton, tvModeButton)
+            ReceiverService.reportRuntimeIssue("Receiver mode set to AirPlay. Press Start Receiver to advertise in this mode.")
+        }
+
+        tvModeButton.setOnClickListener {
+            ReceiverConfig.updateMode(this, ReceiverMode.TV)
+            updateModeButtons(ReceiverMode.TV, airplayModeButton, tvModeButton)
+            ReceiverService.reportRuntimeIssue("Receiver mode set to TV. Press Start Receiver to advertise in this mode.")
         }
 
         startButton.setOnClickListener {
@@ -156,5 +177,29 @@ class MainActivity : ComponentActivity() {
                 throwable.message ?: "The receiver service could not be started on this device.",
             )
         }
+    }
+
+    private fun updateModeButtons(
+        selectedMode: ReceiverMode,
+        airplayModeButton: Button,
+        tvModeButton: Button,
+    ) {
+        val selectedBackground = getColor(android.R.color.black)
+        val selectedForeground = getColor(android.R.color.white)
+        val idleBackground = getColor(android.R.color.white)
+        val idleForeground = getColor(android.R.color.black)
+
+        airplayModeButton.setBackgroundColor(
+            if (selectedMode == ReceiverMode.AIRPLAY) selectedBackground else idleBackground,
+        )
+        airplayModeButton.setTextColor(
+            if (selectedMode == ReceiverMode.AIRPLAY) selectedForeground else idleForeground,
+        )
+        tvModeButton.setBackgroundColor(
+            if (selectedMode == ReceiverMode.TV) selectedBackground else idleBackground,
+        )
+        tvModeButton.setTextColor(
+            if (selectedMode == ReceiverMode.TV) selectedForeground else idleForeground,
+        )
     }
 }

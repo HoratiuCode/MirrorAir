@@ -3716,6 +3716,7 @@ id actions
 id activity_chooser_view_content
 id add
 id advance
+id airplayModeButton
 id alertTitle
 id aligned
 id all
@@ -4142,6 +4143,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvModeButton
 id unchecked
 id uniform
 id unlabeled
@@ -4467,6 +4469,8 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string mode_airplay
+string mode_tv
 string mtrl_badge_numberless_content_description
 string mtrl_button_collapsed_content_description
 string mtrl_button_expanded_content_description

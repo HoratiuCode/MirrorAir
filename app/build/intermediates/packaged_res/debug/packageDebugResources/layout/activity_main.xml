@@ -71,6 +71,29 @@
             android:textColor="@color/mirrorair_muted"
             android:textSize="14sp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/airplayModeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dp"
+                android:text="@string/mode_airplay" />
+
+            <Button
+                android:id="@+id/tvModeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:minWidth="120dp"
+                android:text="@string/mode_tv" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/startButton"
             android:layout_width="wrap_content"

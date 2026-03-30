@@ -8,6 +8,7 @@ color mirrorair_surface
 color mirrorair_text
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id airplayModeButton
 id appIconPreview
 id detailText
 id overlayPanel
@@ -16,6 +17,7 @@ id receiverNameText
 id startButton
 id statusText
 id stopButton
+id tvModeButton
 id videoSurface
 layout activity_main
 mipmap ic_launcher
@@ -25,6 +27,8 @@ string default_detail
 string default_receiver_code
 string default_receiver_name
 string default_status
+string mode_airplay
+string mode_tv
 string receiver_code_value
 string start_receiver
 string stop_receiver
