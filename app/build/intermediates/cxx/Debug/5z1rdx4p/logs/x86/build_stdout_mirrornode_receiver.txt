@@ -1,5 +1,2 @@
 ninja: Entering directory `/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/x86'
-[1/4] Building CXX object CMakeFiles/mirroraire_rpiplay.dir/Users/horatiubudai/ceo/mirror_/MirrorNode/MirrorAir/third_party/rpiplay/rpiplay.cpp.o
-[2/4] Linking CXX static library libmirroraire_rpiplay.a
-[3/4] Building CXX object CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o
-[4/4] Linking CXX shared library "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/5z1rdx4p/obj/x86/libmirrornode_receiver.so"
+ninja: no work to do.

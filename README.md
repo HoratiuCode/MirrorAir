@@ -82,7 +82,7 @@ scripts/install-debug-apk.sh
 
 This direct install path is useful if the Android Package Installer UI keeps stopping on the device.
 
-This can be published with GitHub Pages and used as the download page for the APK once you place `MirrorAir.apk` in `downloads/` or `docs/downloads/`.
+This can be published with GitHub Pages and used as the download page for the APK once you place `MirrorAir-v2.apk` in `downloads/` or `docs/downloads/`.
 
 ## Download assets
 

@@ -12,8 +12,8 @@ find "${ROOT_DIR}/app/build/outputs/apk" -type f \( -name "*.apk" -o -name "*.aa
   cp "${file}" "${DOWNLOAD_DIR}/"
   cp "${file}" "${ROOT_DOWNLOAD_DIR}/"
   if [[ "${file}" == *.apk ]]; then
-    cp "${file}" "${DOWNLOAD_DIR}/MirrorAir-1.0.1.apk"
-    cp "${file}" "${ROOT_DOWNLOAD_DIR}/MirrorAir-1.0.1.apk"
+    cp "${file}" "${DOWNLOAD_DIR}/MirrorAir-v2.apk"
+    cp "${file}" "${ROOT_DOWNLOAD_DIR}/MirrorAir-v2.apk"
   fi
 done
 

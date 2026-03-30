@@ -1,6 +1,6 @@
 const apkStatus = document.getElementById("apk-status");
 const downloadButton = document.getElementById("downloadButton");
-const apkPath = "/downloads/MirrorAir-1.0.1.apk";
+const apkPath = "/downloads/MirrorAir-v2.apk";
 
 fetch(apkPath, { method: "HEAD" })
   .then((response) => {
@@ -16,7 +16,7 @@ fetch(apkPath, { method: "HEAD" })
     throw new Error("APK not found");
   })
   .catch(() => {
-    apkStatus.textContent = "APK status: package missing from downloads/. Upload MirrorAir-1.0.1.apk to enable the button.";
+    apkStatus.textContent = "APK status: package missing from downloads/. Upload MirrorAir-v2.apk to enable the button.";
     downloadButton.textContent = "APK Unavailable";
     downloadButton.href = "#";
     downloadButton.setAttribute("aria-disabled", "true");
