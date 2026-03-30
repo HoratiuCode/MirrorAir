@@ -1,0 +1,4 @@
+ninja: Entering directory `/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/arm64-v8a'
+[1/3] Building CXX object CMakeFiles/mirroraire_rpiplay.dir/Users/horatiubudai/ceo/mirror_/MirrorNode/MirrorAir/third_party/rpiplay/rpiplay.cpp.o
+[2/3] Linking CXX static library libmirroraire_rpiplay.a
+[3/3] Linking CXX shared library "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/5z1rdx4p/obj/arm64-v8a/libmirrornode_receiver.so"

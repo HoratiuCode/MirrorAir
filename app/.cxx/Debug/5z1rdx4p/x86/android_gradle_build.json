@@ -1,0 +1,55 @@
+{
+  "buildFiles": [
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/CMakeLists.txt",
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/src/main/cpp/rpiplay_port_sources.cmake"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "mirroraire_plist::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "mirroraire_plist",
+      "output": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/x86/libmirroraire_plist.a"
+    },
+    "mirroraire_rpiplay::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "mirroraire_rpiplay",
+      "output": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/.cxx/Debug/5z1rdx4p/x86/libmirroraire_rpiplay.a"
+    },
+    "mirrornode_receiver::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "mirrornode_receiver",
+      "output": "/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/5z1rdx4p/obj/x86/libmirrornode_receiver.so",
+      "runtimeFiles": [
+        "/Users/horatiubudai/.gradle/caches/9.4.0/transforms/aac0911ec9c321795a9c9f0e21e66f77/transformed/openssl-1.1.1q-beta-1/prefab/modules/crypto/libs/android.x86/libcrypto.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/opt/homebrew/share/android-commandlinetools/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

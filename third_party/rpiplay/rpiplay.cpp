@@ -137,6 +137,9 @@ static int parse_hw_addr(std::string str, std::vector<char> &hw_addr) {
 static std::string find_mac () {
 /*  finds the MAC address of the first active network interface *
  *  in a Linux, *BSD or macOS system.                           */
+#if defined(__ANDROID__) && __ANDROID_API__ < 24
+    return "02:11:22:33:44:55";
+#else
     std::string mac_address = "";
     struct ifaddrs *ifap, *ifaptr;
     int non_null_octets = 0;
@@ -172,6 +175,7 @@ static std::string find_mac () {
     }
     freeifaddrs(ifap);
     return mac_address;
+#endif
 }
 
 static video_init_func_t find_video_init_func(const char *name) {

@@ -49,11 +49,30 @@
 
       <section class="panel">
         <h2>Install</h2>
+        <ol class="steps">
+          <li>Use an Android device running Android 6 or newer.</li>
+          <li>Tap <strong>Download APK</strong> and wait for <code>MirrorAir-1.0.1.apk</code> to finish downloading.</li>
+          <li>If Android blocks the file, allow <strong>Install unknown apps</strong> for your browser or the Files app.</li>
+          <li>Open the downloaded file from the Android <strong>Files</strong> or <strong>Downloads</strong> app and install it.</li>
+          <li>After install, open MirrorAir and test the receiver on the same Wi-Fi network as your Mac.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>If Install Fails</h2>
+        <ol class="steps">
+          <li>Delete every older <code>MirrorAir.apk</code> or <code>MirrorAir-1.0.1.apk</code> file from Downloads.</li>
+          <li>Uninstall any older <code>MirrorAir</code> or <code>MirrorNode</code> app already on the device.</li>
+          <li>Download the versioned APK again instead of reusing an old browser download.</li>
+          <li>If Android says <strong>There was a problem parsing the package</strong>, check that the device is Android 6 or newer.</li>
+          <li>If Android says <strong>App not installed</strong>, try installing from the Files app instead of the browser popup.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>Current Limits</h2>
         <p>
-          Download the APK, allow app installs from your browser if Android asks, then open MirrorAir on the Android device you want to use as the Mac display target.
-        </p>
-        <p>
-          If install fails, delete any older downloaded APK file first, uninstall older MirrorAir or MirrorNode builds, then download the versioned package again.
+          This build is still experimental. The install package is valid, but Mac to Android mirroring is still under active native integration and may not work on every device yet.
         </p>
       </section>
     </main>

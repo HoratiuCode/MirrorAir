@@ -9,7 +9,7 @@ android {
 
   defaultConfig {
     applicationId = "com.mirrorair.app"
-    minSdk = 26
+    minSdk = 23
     targetSdk = 36
     versionCode = 2
     versionName = "1.0.1"
@@ -24,6 +24,10 @@ android {
   }
 
   buildTypes {
+    debug {
+      signingConfig = signingConfigs.getByName("debug")
+    }
+
     release {
       isMinifyEnabled = false
       proguardFiles(
@@ -36,6 +40,15 @@ android {
   buildFeatures {
     buildConfig = true
     prefab = true
+  }
+
+  signingConfigs {
+    getByName("debug") {
+      enableV1Signing = true
+      enableV2Signing = true
+      enableV3Signing = true
+      enableV4Signing = false
+    }
   }
 
   compileOptions {
