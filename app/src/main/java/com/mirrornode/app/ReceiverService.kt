@@ -200,7 +200,7 @@ class ReceiverService : Service() {
     }
 
     private fun updateState(status: String, running: Boolean, detail: String) {
-        stateFlow.value = ReceiverState(
+        stateFlow.value = stateFlow.value.copy(
             receiverName = currentConfig.receiverName,
             receiverCode = currentConfig.receiverCode,
             statusText = status,
@@ -233,6 +233,13 @@ class ReceiverService : Service() {
         )
 
         fun states() = stateFlow.asStateFlow()
+
+        fun reportRuntimeIssue(detail: String) {
+            stateFlow.value = stateFlow.value.copy(
+                statusText = "Receiver compatibility issue",
+                detailText = detail,
+            )
+        }
 
         fun startIntent(context: Context) = Intent(context, ReceiverService::class.java).apply {
             action = ACTION_START

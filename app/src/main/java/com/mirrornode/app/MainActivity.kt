@@ -89,7 +89,13 @@ class MainActivity : ComponentActivity() {
         holder.addCallback(
             object : SurfaceHolder.Callback {
                 override fun surfaceCreated(holder: SurfaceHolder) {
-                    ReceiverNativeBridge.setVideoSurface(holder.surface)
+                    runCatching {
+                        ReceiverNativeBridge.setVideoSurface(holder.surface)
+                    }.onFailure { throwable ->
+                        ReceiverService.reportRuntimeIssue(
+                            throwable.message ?: "The Android video surface could not be attached on this device.",
+                        )
+                    }
                 }
 
                 override fun surfaceChanged(
@@ -98,11 +104,19 @@ class MainActivity : ComponentActivity() {
                     width: Int,
                     height: Int,
                 ) {
-                    ReceiverNativeBridge.setVideoSurface(holder.surface)
+                    runCatching {
+                        ReceiverNativeBridge.setVideoSurface(holder.surface)
+                    }.onFailure { throwable ->
+                        ReceiverService.reportRuntimeIssue(
+                            throwable.message ?: "The Android video surface could not be updated on this device.",
+                        )
+                    }
                 }
 
                 override fun surfaceDestroyed(holder: SurfaceHolder) {
-                    ReceiverNativeBridge.setVideoSurface(null)
+                    runCatching {
+                        ReceiverNativeBridge.setVideoSurface(null)
+                    }
                 }
             },
         )
@@ -137,6 +151,10 @@ class MainActivity : ComponentActivity() {
 
         runCatching {
             ContextCompat.startForegroundService(this, ReceiverService.startIntent(this))
+        }.onFailure { throwable ->
+            ReceiverService.reportRuntimeIssue(
+                throwable.message ?: "The receiver service could not be started on this device.",
+            )
         }
     }
 }

@@ -31,7 +31,11 @@ object AndroidVideoDecoder {
     @Synchronized
     fun start() {
         started = true
-        configureCodecIfReady()
+        runCatching {
+            configureCodecIfReady()
+        }.onFailure { throwable ->
+            reportDecoderIssue(throwable, "The H.264 decoder could not start on this device.")
+        }
     }
 
     @Synchronized
@@ -45,20 +49,35 @@ object AndroidVideoDecoder {
 
     @Synchronized
     fun flush() {
-        runCatching { codec?.flush() }
+        runCatching { codec?.flush() }.onFailure { throwable ->
+            reportDecoderIssue(throwable, "The decoder flush path failed on this device.")
+        }
     }
 
     @Synchronized
     fun queueSample(data: ByteArray, ptsUs: Long, frameType: Int): Boolean {
-        extractCodecConfig(data)
-        configureCodecIfReady()
+        runCatching {
+            extractCodecConfig(data)
+            configureCodecIfReady()
+        }.onFailure { throwable ->
+            reportDecoderIssue(throwable, "The decoder could not configure for this device.")
+            return false
+        }
 
         val activeCodec = codec ?: return false
         if (!configured) {
             return false
         }
 
-        drainOutput(activeCodec)
+        if (!runCatching {
+                drainOutput(activeCodec)
+            }.getOrElse { throwable ->
+                reportDecoderIssue(throwable, "The decoder output path failed on this device.")
+                false
+            }
+        ) {
+            return false
+        }
 
         val inputIndex = activeCodec.dequeueInputBuffer(0)
         if (inputIndex < 0) {
@@ -78,8 +97,21 @@ object AndroidVideoDecoder {
         } else {
             0
         }
-        activeCodec.queueInputBuffer(inputIndex, 0, data.size, ptsUs, flags)
-        drainOutput(activeCodec)
+        runCatching {
+            activeCodec.queueInputBuffer(inputIndex, 0, data.size, ptsUs, flags)
+        }.onFailure { throwable ->
+            reportDecoderIssue(throwable, "The decoder rejected incoming video on this device.")
+            return false
+        }
+        if (!runCatching {
+                drainOutput(activeCodec)
+            }.getOrElse { throwable ->
+                reportDecoderIssue(throwable, "The decoder output path failed on this device.")
+                false
+            }
+        ) {
+            return false
+        }
         return true
     }
 
@@ -122,16 +154,22 @@ object AndroidVideoDecoder {
         codec = null
     }
 
-    private fun drainOutput(activeCodec: MediaCodec) {
+    private fun drainOutput(activeCodec: MediaCodec): Boolean {
         val bufferInfo = MediaCodec.BufferInfo()
         while (true) {
             val outputIndex = activeCodec.dequeueOutputBuffer(bufferInfo, 0)
             when {
                 outputIndex >= 0 -> activeCodec.releaseOutputBuffer(outputIndex, true)
                 outputIndex == MediaCodec.INFO_OUTPUT_FORMAT_CHANGED -> Unit
-                else -> return
+                else -> return true
             }
         }
+    }
+
+    private fun reportDecoderIssue(throwable: Throwable, fallbackMessage: String) {
+        configured = false
+        releaseCodec()
+        ReceiverService.reportRuntimeIssue(throwable.message ?: fallbackMessage)
     }
 
     private fun findNalUnits(data: ByteArray): List<ByteArray> {
