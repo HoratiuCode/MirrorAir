@@ -48,11 +48,14 @@ class AirPlayDiscoveryManager(
             serviceType = "_airplay._tcp."
             port = config.airPlayPort
             setAttribute("deviceid", deviceId)
-            setAttribute("features", "0x5A7FFFF7,0x1E")
-            setAttribute("flags", "0x4")
-            setAttribute("model", "MirrorNode1,1")
+            setAttribute("features", AIRPLAY_FEATURES)
+            setAttribute("flags", AIRPLAY_FLAGS)
+            setAttribute("model", AIRPLAY_MODEL)
+            setAttribute("pk", AIRPLAY_PUBLIC_KEY)
+            setAttribute("pi", AIRPLAY_PAIRING_ID)
             setAttribute("protovers", "1.1")
-            setAttribute("srcvers", "220.68")
+            setAttribute("srcvers", AIRPLAY_SOURCE_VERSION)
+            setAttribute("vv", AIRPLAY_PROTOCOL_VERSION)
         }
 
         val raopInfo = NsdServiceInfo().apply {
@@ -61,14 +64,24 @@ class AirPlayDiscoveryManager(
             port = config.raopPort
             setAttribute("ch", "2")
             setAttribute("cn", "0,1,2,3")
+            setAttribute("da", "true")
             setAttribute("et", "0,3,5")
+            setAttribute("ft", AIRPLAY_FEATURES)
+            setAttribute("am", AIRPLAY_MODEL)
             setAttribute("md", "0,1,2")
             setAttribute("pw", "false")
+            setAttribute("rhd", "5.6.0.0")
+            setAttribute("sf", AIRPLAY_FLAGS)
             setAttribute("sm", "false")
             setAttribute("sr", "44100")
             setAttribute("ss", "16")
+            setAttribute("sv", "false")
             setAttribute("tp", "UDP")
             setAttribute("txtvers", "1")
+            setAttribute("vn", "65537")
+            setAttribute("vs", AIRPLAY_SOURCE_VERSION)
+            setAttribute("vv", AIRPLAY_PROTOCOL_VERSION)
+            setAttribute("pk", AIRPLAY_PUBLIC_KEY)
         }
 
         airPlayRegistration = registrationListener(
@@ -129,5 +142,16 @@ class AirPlayDiscoveryManager(
         }
 
         return networkAddress ?: fallback
+    }
+
+    companion object {
+        private const val AIRPLAY_FEATURES = "0x5A7FFEE6"
+        private const val AIRPLAY_FLAGS = "0x4"
+        private const val AIRPLAY_MODEL = "AppleTV2,1"
+        private const val AIRPLAY_PROTOCOL_VERSION = "2"
+        private const val AIRPLAY_SOURCE_VERSION = "220.68"
+        private const val AIRPLAY_PUBLIC_KEY =
+            "b07727d6f6cd6e08b58ede525ec3cdeaa252ad9f683feb212ef8a205246554e7"
+        private const val AIRPLAY_PAIRING_ID = "2e388006-13ba-4041-9a67-25dd4a43d536"
     }
 }

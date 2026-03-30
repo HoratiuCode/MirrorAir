@@ -383,7 +383,8 @@ extern "C" void log_callback(void *cls, int level, const char *msg) {
 }
 
 int start_server(std::vector<char> hw_addr, std::string name, bool debug_log,
-                 video_renderer_config_t const *video_config, audio_renderer_config_t const *audio_config) {
+                 video_renderer_config_t const *video_config, audio_renderer_config_t const *audio_config,
+                 unsigned short requested_port) {
     if (video_init_func == NULL) {
         video_init_func =
 #if defined(HAS_ANDROID_RENDERER)
@@ -437,7 +438,7 @@ int start_server(std::vector<char> hw_addr, std::string name, bool debug_log,
     if (video_renderer) video_renderer->funcs->start(video_renderer);
     if (audio_renderer) audio_renderer->funcs->start(audio_renderer);
 
-    unsigned short port = 0;
+    unsigned short port = requested_port;
     raop_start(raop, &port);
     raop_set_port(raop, port);
 

@@ -4,6 +4,16 @@
 
 MirrorAir is an experimental Android receiver project intended to let a Mac discover an Android tablet or phone as an AirPlay-style mirroring target.
 
+## Stack
+
+This repository is **not** a React app.
+
+- Android receiver app: Kotlin + Gradle + CMake/NDK in `app/`
+- Download website: plain `index.html`, `styles.css`, and `app.js`
+- Bundled native dependencies: `third_party/rpiplay` and `third_party/libplist`
+
+There is no `package.json`, no `node_modules`, and no npm/yarn/pnpm install step in the current project.
+
 ## What exists now
 
 - Minimal Android UI with a fullscreen render surface, receiver name, code, status text, and `Start Receiver` / `Stop Receiver`.
@@ -55,6 +65,22 @@ The static website is available in two places:
 - `docs/app.js`
 
 Vercel should use the repo root directly. GitHub Pages can still use `docs/`.
+
+## Build And Install
+
+Build the Android debug APK:
+
+```bash
+./gradlew assembleDebug
+```
+
+Install it directly over USB with `adb`:
+
+```bash
+scripts/install-debug-apk.sh
+```
+
+This direct install path is useful if the Android Package Installer UI keeps stopping on the device.
 
 This can be published with GitHub Pages and used as the download page for the APK once you place `MirrorAir.apk` in `downloads/` or `docs/downloads/`.
 

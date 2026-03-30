@@ -80,7 +80,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Receiver advertised on Wi-Fi",
                 running = true,
-                detail = "The app is visible on the network, but Mac mirroring is not fully active in this build yet.",
+                detail = "The app is visible as an AirPlay receiver on Wi-Fi and ready for connection attempts from your Mac.",
             )
             return
         }
@@ -113,7 +113,7 @@ class ReceiverService : Service() {
                     updateState(
                         status = "Receiver advertised on Wi-Fi",
                         running = true,
-                        detail = "The app is advertising ${currentConfig.receiverName}, but the full Mac mirroring engine is still being integrated.",
+                        detail = "Advertising ${currentConfig.receiverName} as an AirPlay-style TV target for your Mac on the local Wi-Fi network.",
                     )
                 },
                 onFailure = { reason ->
@@ -129,7 +129,7 @@ class ReceiverService : Service() {
             updateState(
                 status = "Starting network receiver...",
                 running = true,
-                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi. This build is discovery-only until the AirPlay engine is integrated.",
+                detail = "Advertising ${currentConfig.receiverName} on Wi-Fi and starting the native AirPlay receiver engine.",
             )
         } else {
             shutdownReceiver()

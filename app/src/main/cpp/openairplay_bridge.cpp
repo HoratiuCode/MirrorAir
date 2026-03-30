@@ -20,7 +20,8 @@ int start_server(
     std::string name,
     bool debug_log,
     video_renderer_config_t const* video_config,
-    audio_renderer_config_t const* audio_config);
+    audio_renderer_config_t const* audio_config,
+    unsigned short raop_port);
 
 int stop_server();
 
@@ -304,8 +305,19 @@ Java_com_mirrornode_app_ReceiverNativeBridge_nativeStartReceiver(
       static_cast<char>(0x55),
   };
 
-  const int started =
-      start_server(hw_addr, receiver_name_value, true, &video_config, &audio_config);
+  if (raop_port <= 0) {
+    __android_log_print(
+        ANDROID_LOG_ERROR, kTag, "Invalid RAOP port: %d", static_cast<int>(raop_port));
+    return JNI_FALSE;
+  }
+
+  const int started = start_server(
+      hw_addr,
+      receiver_name_value,
+      true,
+      &video_config,
+      &audio_config,
+      static_cast<unsigned short>(raop_port));
   if (started != 0) {
     __android_log_print(ANDROID_LOG_ERROR, kTag, "RPiPlay start_server failed: %d", started);
     return JNI_FALSE;

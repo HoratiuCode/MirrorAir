@@ -48,3 +48,7 @@
 7	1868	1774815660766574754	CMakeFiles/mirroraire_rpiplay.dir/Users/horatiubudai/ceo/mirror_/MirrorNode/MirrorAir/third_party/rpiplay/rpiplay.cpp.o	576728c6b8ea8cfa
 1869	1966	1774815660871069000	libmirroraire_rpiplay.a	bdc0aa4f6f86d004
 1966	2148	1774815661046241735	/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/5z1rdx4p/obj/arm64-v8a/libmirrornode_receiver.so	d7e62e295319d7c4
+9	4619	1774885218451088651	CMakeFiles/mirroraire_rpiplay.dir/Users/horatiubudai/ceo/mirror_/MirrorNode/MirrorAir/third_party/rpiplay/rpiplay.cpp.o	576728c6b8ea8cfa
+8	4811	1774885218656446191	CMakeFiles/mirrornode_receiver.dir/openairplay_bridge.cpp.o	aab690680d347092
+4620	4995	1774885218851645000	libmirroraire_rpiplay.a	bdc0aa4f6f86d004
+4996	5375	1774885219223240318	/Users/horatiubudai/ceo/mirror /MirrorNode/MirrorAir/app/build/intermediates/cxx/Debug/5z1rdx4p/obj/arm64-v8a/libmirrornode_receiver.so	d7e62e295319d7c4

@@ -24,12 +24,22 @@ data class ReceiverConfig(
             }
             val receiverCode = properties.getProperty("receiver.code")?.takeIf { it.isNotBlank() }
                 ?: generateAndPersistCode(configFile, properties)
+            val raopPort = properties.getProperty("raop.port", DEFAULT_RAOP_PORT.toString()).toInt()
+            val configuredAirPlayPort = properties.getProperty(
+                "airplay.port",
+                DEFAULT_AIRPLAY_PORT.toString(),
+            ).toInt()
+            val airPlayPort = if (configuredAirPlayPort == raopPort + 1) {
+                configuredAirPlayPort
+            } else {
+                raopPort + 1
+            }
 
             return ReceiverConfig(
                 receiverName = properties.getProperty("receiver.name", DEFAULT_NAME),
                 receiverCode = receiverCode,
-                airPlayPort = properties.getProperty("airplay.port", DEFAULT_AIRPLAY_PORT.toString()).toInt(),
-                raopPort = properties.getProperty("raop.port", DEFAULT_RAOP_PORT.toString()).toInt(),
+                airPlayPort = airPlayPort,
+                raopPort = raopPort,
             )
         }
 
